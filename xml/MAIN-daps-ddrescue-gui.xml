@@ -233,6 +233,49 @@ Free Documentation License".
                 You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted device get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you;re finished with a drive, you should unmount it, which i usually done when you shut down your computer.
             </para>
         </section>
+
+        <section>
+            <title>Bad sectors</title>
+            <para>
+                A sector is a very small area of a disk. The exact size can very, but never the less, it's very small. When a sector becomes unreadable, it is called a bad sector. Bad sectors can happen because of corrosion, scratches, shock damage and so on.
+            </para>
+        </section>
+
+        <section>
+            <title>"Disks"</title>
+            <para>
+                This is quite a vague term that can mean a lot of things. In this user guide, and in the program, a disk is a partition or device that contains a file system.
+            </para>
+        </section>
+
+        <section>
+            <title>Formatting</title>
+            <para>
+                If you format a disk, you are giving it a file system. This can also mean erasing the previous filesystem and everything it contains. If you say a disk has is formatted as FAT32, it means the disk has a FAT32 filesystem on it. Often when a disk is formatted, the data on it isn't actually overwritten, and it can sometimes be recovered. The same goes for deletion.
+            </para>
+        </section>
+
+        <section>
+            <title>Deleting and Undeleting</title>
+            <para>
+                You almost certainly know what deleting is. What you might not know, though, is that when you delete a file it isn't actually "gone" most of the time. Often, the reference that tells your computer the file exists is deleted, and the space the file was using is marked as free, but the actual file is still there, until it gets overwritten by something else later.
+            </para>
+
+            <para>
+                Because the files aren't often overwritten until later, if a file was deleted recently, it can often be "undeleted". This is where a special program reads through all the empty space on your disk and looks for file fragments that haven't been overwritten yet. You can often recover a surprising amount of data by doing this.
+            </para>
+
+            <para>
+                NOTE: GNU ddrescue and DDRescue-GUI aren't undelete tools, but you can often use them with undelete tools to get more data back.
+            </para>
+
+        </section>
+        <section>
+            <title>The Disk Info Window</title> <!-- Screenshot -->
+            <para>
+                A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This windows shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
+            </para>
+        </section>
     </chapter>
 
     <appendix xml:id="stylelicense">
