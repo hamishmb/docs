@@ -235,9 +235,16 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>Bad sectors</title>
+            <title>Bad Sectors</title>
             <para>
                 A sector is a very small area of a disk. The exact size can very, but never the less, it's very small. When a sector becomes unreadable, it is called a bad sector. Bad sectors can happen because of corrosion, scratches, shock damage and so on.
+            </para>
+        </section>
+
+        <section>
+            <title>Data Corruption</title>
+            <para>
+                This often happens because of bad sectors, but can also be due to power loss while writing data and many other things. Basically, it's data that can be read, but it isn't completely intact so it might not be readable. If you're unlucky, this might happen to you after doing a recovery with ddrescue and/or DDRescue-GUI. In that case, you'll need to use some more tools to fix it so you can read your files.
             </para>
         </section>
 
@@ -268,13 +275,62 @@ Free Documentation License".
             <para>
                 NOTE: GNU ddrescue and DDRescue-GUI aren't undelete tools, but you can often use them with undelete tools to get more data back.
             </para>
+        </section>
+
+        <section>
+            <title>Image Files</title>
+            <para>
+                These hold a filesystem, much like a partition. This is a weird concept, but if you think about it, if everything in macOS and Linux is represented as a file, including partitions, it makes sense that a file can hold all the data from a partition or device. Image files are usually created by literally copying the file that represents a partition or a disk. Image files can have partitions inside too, just like a hard drive.
+            </para>
+
+            <para>
+                You might be wondering why these are helpful. Often they're used for backups, but also for data recovery. You can recovery data from a bad DVD, say, and save the data into a file. This is good, because often after doing a recovery, some of the data you got is corrupted, and it needs to be analysed with another tool. It's much easier to do this if you recover to a file.
+            </para>
 
         </section>
+
         <section>
             <title>The Disk Info Window</title> <!-- Screenshot -->
             <para>
                 A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This windows shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
             </para>
+        </section>
+    </chapter>
+
+    <chapter xml:id="basicfunctionality">
+        <info>
+            <title>Getting Started With DDRescue-GUI</title>
+            <abstract>
+                <para>
+	                This chapter covers the basic functionality you'll need to use in DDRescue-GUI. It's supposed to be just enough for you to get started using DDRescue-GUI.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>The Main Window</title>
+            <para>
+                That was quite a lot of introduction material there. Now we'll get started with using the GUI. Firstly, here's the main window:
+
+                <!-- Screenshot -->
+
+                <caution>
+                    <para>
+                        If you're using a version of ddrescue I don't support, you'll get a warning at this point. If you see the warning, check you're running the latest version of DDRescue-GUI.
+                    </para>
+                </caution>
+
+                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The log file is optional, and used to resume where you left off if you don't want to recover all the data at once.
+
+                <tip>
+                    <para>
+                        It's highly recommended that you use a log file. It only takes a few seconds to do, and it means that you can stop and start the recovery as you please. It also allows you to resume your recovery if, say, there's  power outage, or your computer crashes. If that happened and you didn't use a log file you would probably have to start from the start!
+                    </para>
+                </tip>
+
+                Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file.
+
+             </para>
         </section>
     </chapter>
 
