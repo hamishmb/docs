@@ -16,7 +16,7 @@ ROOTID=""
 ## Custom Stylesheets
 ## (if not defined, the DocBook stylesheets will be used)
 ##
-#STYLEROOT=""
+STYLEROOT="./mystyle"
 #FALLBACK_STYLEROOT=""
 #HTML_CSS=""
 #EPUB_CSS=""
