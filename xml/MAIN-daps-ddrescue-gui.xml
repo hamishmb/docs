@@ -95,7 +95,7 @@ Free Documentation License".
 
         <simplesect>
             <title>Conventions</title>
-            <para>I have used several different conventions, ranging from admonitions to code blocks to make this book easy to read. At any point where you need to be careful about something, this icon is used with some information:
+            <para>I have used several different conventions, ranging from admonitions to code blocks to make this book easy to read. DDRescue-GUI runs on Linux and macOS, and I will provide screenshots for both platforms in this document. At any point where you need to be careful about something, this icon is used with some information:
             </para>
 
             <caution>
@@ -146,14 +146,93 @@ Free Documentation License".
         <info>
             <abstract>
                 <para>
-	                DDRescue-GUI is an open source GUI frontend for GNU ddrescue. It is designed to make ddrescue easier to use, as it is a command-line application. DDRescue-GUI brings ddrescue to a wider audience than was previously possible because "normal" users can use it. This chapter provides basic information about ddrescue and DDRescue-GUI.
+	                DDRescue-GUI is an open source GUI frontend for GNU ddrescue. It is designed to make ddrescue easier to use, as it is a command-line application. DDRescue-GUI brings ddrescue to a wider audience than was previously possible because "normal" users can use it. This chapter provides basic information about ddrescue and DDRescue-GUI. I'm going to start at the start, to make sure everything is very clear. If you already know about ddrescue and DDRescue-GUI, you can probably skip to the next chapter.
                 </para>
             </abstract>
         </info>
 
-        <para>
-            I am a paragraph in a chapter.
-        </para>
+        <section>
+            <title>What is GNU ddrescue?</title> <!--TODO Screenshot of ddrescue in action-->
+            <para>
+                GNU ddrescue is a data recovery program, written by Antonio Diaz Diaz. It's amazingly powerful, and has a lot of features other tools don't have, such as the ability to use a log file, which means that if your system crashes during a recovery, you can start again where you left off.
+            </para>
+            <para>
+                Other features include multiple passes over drives to try and get the easy-to-read data first, direct disk access (complicated so I will explain it later), and disk-to-disk recovery. It was originally written for Linux, ddrescue can actually run just fine on macOS and even Windows, which makes it all the more impressive. 
+            </para>
+            <para>
+                That's where the difficulty comes in, though. Firstly, ddrescue is a commandline tool, which means only people who are used to using the text-only commandline are going to be able to use it. It's possible to figure it out anyway, but if you're not confident that you're doing it right you could cause loss of data. Despite this, ddrescue is probably still the best data recovery tool out there.
+            </para>
+            <para>
+                The second problem is that while ddrescue will run on macOS and Windows, you have to compile it, which is often slow, difficult, and confusing, especially if you aren't used to doing this sort of thing. All of that is probably enough to turn some people away from using ddrescue, sadly. DDRescue-GUI provides a graphical interface for ddrescue, and solves some of these other problems as well.
+            </para>
+        </section>
+
+        <section>
+            <title>What is DDRescue-GUI?</title> <!--TODO Screenshot of DDRescue-GUI in action-->
+            <para>
+                DDRescue-GUI aims to bring GNU ddrescue to a wider audience by providing a graphical interface. DDRescue-GUI is cross platform, running on macOS and Linux. On macOS, DDRescue-GUI comes with a precompiled copy of ddrescue, so you can just install it and get to work. The GUI also provides other features not present in ddrescue, such as disk information, to help make sure you select the right disks for your recovery, auto-unmounting of devices (I will explain this later), and useful tips and suggestions to help you get set up.
+            </para>
+            <para>
+                DDRescue-GUI lets you use most of ddrescue's features, as well as guiding you. On macOS, some of these features aren't available if you're just using ddrescue by itself, but in a few cases DDRescue-GUI can work around the problem and provide a way for you to use them.
+            </para>
+        </section>
+
+        <section>
+            <title>Why should I use DDRescue-GUI?</title>
+            <para>
+                If the features above didn't convince you, then this might :) If you're a normal user and wondering why you should use this program with ddrescue instead of one of the other popular tools, you should know that ddrescue is smarter than quite a lot of the other tools:
+            </para>
+            <para>
+                Let's imagine that you have an old hard drive with precious data on it, say, family photos. GNU ddrescue will try to read the easiy-readable parts of the disk first, which might grab, say, 70% of your photos quickly. This is important because drives often fail quite soon after showing warning signs, and it might let you get a fair amount of data before your drive completely gives up. After this, ddrescue will make several more passes to try and get the rest of the data.
+            </para>
+            <para>
+                Some other tools, such as SpinRite, tend to read the drive in sequence, and refuse to give up when they find an unreadable part of the drive. Combined with other things, this can theoretically get the data off your drive and even fix your drive. However, it could also break your drive before you get much data, especially if there are a load of bad areas at the start of the drive, but most of the rest of it is readable. Note that SpinRite is a well-respected tool, and has helped a lot of people, so I mean no disrespect to its users or authors. I would worry about using a disk again after it failed though, even if it had been fixed.
+            </para>
+            <para>
+                That aside, if you're an adminisrator, you might enjoy looking at ddrescue's output so you can see exactly what going on, rather than use a styled GUI. I certainly do. In this case, you're in luck: DDRescue-GUI makes it easy for you to see the output as well, if you want to. <!-- Screenshot -->
+            </para>
+        </section>
+    </chapter>
+
+    <chapter xml:id="concepts">
+        <title>Data Recovery Concepts</title>
+        <info>
+            <abstract>
+                <para>
+	                In order to be able to use any data recovery tools, you need to understand some of the concepts behind data recovery. This chapter will explain the basics, and it will also show you how to get help when you're using the GUI. You can safely skip this chapter if you already understand the concepts, because I've gone into fairly basic detail here.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>Device Names</title>
+            <para>
+                Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux and macOS, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0" (Linux), or "/dev/disk1" (macOS), which you can think of as being similar to the D: drive in Windows.
+            </para>
+            <para>
+                Linux and macOS tend to use different names for devices. On Linux, it's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. macOS, however, tends to call disks "/dev/disk0" (first disk in the system, usually the boot drive), "/dev/disk1" (could be a hard drive, USB drive, or optical drive), and "/dev/disk1s2" (second partition on the second drive). It's a bit easier to understand the Linux names. If you're finding this confusing, don't worry, because I will explain it more clearly along with some of the other concepts. It's quite complicated.
+            </para>
+            <para>
+                Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux and macOS, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it need to have partitions.
+            </para>
+        </section>
+
+        <section>
+            <title>Partitions and File Systems</title>
+            <para>
+                Okay. Device names can be a bit confusing, but it'll start to make more sense soon. A partition is, literally, just a section of a hard drive or other device. Usually, you only need partitions on hard drives, and other devices like DVDs often don't have them at all. You can have many partitions on one drive, often up to 4, but sometimes more than that.
+            </para>
+            <para>
+                Right, so we have devices and partitions, but to actually store data, the partitions need a file system. This organises the files and keeps track of where they are and how large they are. A file system is what you see in Windows as, say, C:, or E:. Remember that some devices like DVDs don't need partitions, and the device has the filesystem itself.
+            </para>
+        </section>
+
+        <section>
+            <title>"Mounting" and "Unmounting" Devices</title>
+            <para>
+                You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted device get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you;re finished with a drive, you should unmount it, which i usually done when you shut down your computer.
+            </para>
+        </section>
     </chapter>
 
     <appendix xml:id="stylelicense">
