@@ -320,7 +320,7 @@ Free Documentation License".
                     </para>
                 </caution>
 
-                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The log file is optional, and used to resume where you left off if you don't want to recover all the data at once.
+                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The log file is optional, and used to resume where you left off if you don't want to recover all the data at once. If you set the log file, make sure you put it on a third drive (perhaps a USB stick) for safety.
 
                 <tip>
                     <para>
@@ -329,9 +329,84 @@ Free Documentation License".
                 </tip>
 
                 Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file.
-
              </para>
+
+            <para>
+                You might have noticed the "Detailed Info" pulldown. That's use to show you more information about what's happening during your recovery. If you click on it, the window will look like this instead:
+
+                <!-- Screenshot -->
+
+                When you're doing a recovery this section will have lots of information, like this:
+
+                <!-- Screenshot -->
+
+            </para>
+
+            <para>
+                The next helpful thing on this window is the button called "Disk Information". This contains all the the disk information I mentioned earlier, and it's very helpful when you're trying to match device names to disks:
+
+                <!-- Screenshot -->
+
+                For example, you can see in the screenshot that I have a device whose model is "Samsung SSD 850", and because I have that in a table with device names, I now know that my SSD's name is "/dev/sda".
+
+            </para>
+
+            <para>
+                So if you were starting a recovery, you'd select the image source, log file, and image destination. You also need to pick some more settings before you can start your recovery though, and these are on the settings window.
+
+                <tip>
+                    <para>
+                        If you accidentally click "Start" now, don't worry, because the GUI will prompt you to take a look at the settings first. This is designed to stop you from making mistakes and losing data.
+                    </para>
+                </tip>
+
+            </para> 
         </section>
+
+        <section>
+            <title>Setting up for your recovery.</title>
+            <para>
+                You're pretty close to being ready to go now, but first you need to check the settings:
+
+                <!-- Screenshot -->
+
+                You might think this looks like a lot of options, and you'd be right. To help you get started quickly, there are three presets at the bottom of the window:
+
+                <!-- Screenshot -->
+
+                If you're in a hurry to get started, just click one of these and then save the settings, and it should be fine. If you think your disk is mostly readable, go with "Fastest". If you aren't sure, "Balanced" is a good all-around choice. I you know that your disk is heavily damaged, pick "Best".
+
+                <note>
+                    <para>
+                        These presets set up DDRescue-GUI quickly so you can get started. If you pick the wrong option, it's okay, but it might just mean your recovery takes a bit longer. Nothing bad will happen though. If it's taking a long time, and you used a log file, feel free to stop the recovery, and then start again with a different preset. *But*, make sure you pick the same options on the main window!
+                   </para>
+                </note>
+
+                There are other options to discuss here, but this is the basic functionality section, so I'm mostly focused on getting you running at the moment. For now, save the settings and close the window.
+
+            </para>
+        </section>
+
+        <section>
+            <title>Start your recovery</title>
+            <para>
+                You should now be ready to start recovering data. Go ahead and click the start button.
+
+                <caution>
+                    <para>
+                        If anything is missing or set wrong, you'll be notified at this point. If you see any warnings or errors, go back and check that you set everything up right.
+                    </para>
+                </caution>
+
+                Hopefully, you're seeing something like this:
+
+                <!-- Screenshot -->
+
+                And if you want to, click on the "Detailed Info" dropdown I mentioned before to see what's going on in more detail. At this point, you probably just need to let your system get on with it. Data recovery can take hours, days, or even weeks. Hopefully, in your case, you will have a speedy recovery, but it all depends on how badly your disk was damaged, and what kind of damage it has taken.
+
+            </para>
+        </section>
+
     </chapter>
 
     <appendix xml:id="stylelicense">
