@@ -328,7 +328,7 @@ Free Documentation License".
                     </para>
                 </tip>
 
-                Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file.
+                Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file. It's a good idea to go with an image file like "recovery.img". Put it in a convenient place so you don't lose it.
              </para>
 
             <para>
@@ -404,6 +404,8 @@ Free Documentation License".
 
                 And if you want to, click on the "Detailed Info" dropdown I mentioned before to see what's going on in more detail. At this point, you probably just need to let your system get on with it. Data recovery can take hours, days, or even weeks. Hopefully, in your case, you will have a speedy recovery, but it all depends on how badly your disk was damaged, and what kind of damage it has taken.
 
+                <!-- TODO end of recovery stuff -->
+
             </para>
         </section>
 
@@ -424,12 +426,68 @@ Free Documentation License".
                 Using a log file is always a good idea for many reasons:
 
                 <itemizedlist mark='bullet'>
-                    <listitem>
-                        <para>bob</para>
-                    </listitem>
+                    <listitem><para>It allows you to stop and start the recovery as and when you please.</para></listitem>
+                    <listitem><para>It allows you to restart your recovery with different settings in Settings Window if you want/need to.</para></listitem>
+                    <listitem><para>It means you can resume your recovery if your system crashes for the recovery stops for any other reason.</para></listitem>
                 </itemizedlist>
+
+                Without a log file, you are imposing serious limitations on yourself and the program, and also risking your data in the case of a system crash or power outage. When you set a log file, it's a good idea to put it on a drive different to your destination drive. Put in somewhere else, like on a USB stick. This means that if you somehow overwrite the destination drive, you still have a log file.
+
+                <warning>
+                    <para>
+                        If you really want to, you can opt to not use a log file. This is a really bad idea. Only do this if you've thought everything through, and are really sure you won't make use of ANY of the features in the list above.
+                    </para>
+                </warning>
             </para>
         </section>
+
+        <section>
+            <title>The advanced options in the settings window</title>
+            <para>
+                There are a lot of options here that we didn't cover in Chapter 3, so let's get started.
+            </para>
+
+            <section>
+                <title>Direct Disk Access</title>
+                <para>
+                    This is one of GNU ddrescue's best features. Surely, though, if we're recovering from the file that represents the device, we're reading directly from it anyway? The answer is no, for a variety of reasons.
+                </para>
+
+                <para>
+                    The Linux Kernel (or Mach Kernel for Mac users) buffers input and output to devices. This is good:
+
+                    <itemizedlist mark='bullet'>
+                        <listitem><para>It means we can write to devices faster (up to a point).</para></listitem>
+                        <listitem><para>Reading data can also be faster if we've already read that bit of data since booting.</para></listitem>
+                    </itemizedlist>
+
+                    Basically, it makes our devices seem faster. When you read from a device file like "/dev/sda", the kernel manages all the reads through its buffer. The problem is that the buffer holds data in sections, of, say, 4 KB. This is normally fine, but if you can read 3KB from disk before getting an error, you won't get ANY of that data from the kernel, because it can't fill the buffer.
+                </para>
+
+                <para>
+                    Direct disk access solves this by bypassing the kernel's buffer entirely. Note that it can make recoveries slower, but you normally want to leave it enabled.
+                </para>
+            </section>
+
+            <section>
+                <title>Reading backwards</title>
+                <para>
+                    GNU ddrescue will normally start by reading from the start of the drive to the end of the drive ("forwards"). After that, it does several forwards and backwards passes to get as much data as possible.
+                </para>
+
+                <para>
+                    However, it is possible to start by reading from the end of the disk to the start ("backwards"). Using this option also reverses all of the other passes. Reading backwards is often slower, but if you have a lot of bad sectors at the start of your drive, this might help you.
+                </para>
+            </section>
+
+            <section>
+                <title>Preallocating disk space</title>
+                <para>
+
+                </para>
+            </section>
+        </section>
+
     </chapter>
 
     <appendix xml:id="stylelicense">
