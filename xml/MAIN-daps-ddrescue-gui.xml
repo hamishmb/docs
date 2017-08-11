@@ -483,9 +483,61 @@ Free Documentation License".
             <section>
                 <title>Preallocating disk space</title>
                 <para>
+                    <note>
+                        <para>
+                            This feature is only available on Linux.
+                        </para>
+                    </note>
 
+                    This is only really meaningful if you're using an image file. Say, you're recovering an 8GB USB drive. What it will do is make an 8GB disk image and them fill it with data, rather than expanding the disk image as new data arrives. This is useful if you're not sure you have enough disk space for the data. It's also possible it might speed the recovery up.
                 </para>
             </section>
+
+            <section>
+                <title>Soft run</title>
+                <para>
+                    As the name suggests, this option will skip over bad sectors. This option can be helpful if you want to make a really quick first pass before trying the difficult parts of the disk in some situations. Normally, it's not very helpful though, as all it does is disable the last pass, "Retrying bad sectors".
+                </para>
+            </section>
+
+            <section>
+                <title>Overwrite output file</title>
+                <para>
+                    You need to enable this option if you're doing a device to device recovery, rather than recovering to an image file. This is just a safety feature.
+
+                    <tip>
+                        <para>
+                            DDRescue-GUI will automatically set this option for you when it is needed. If it's wrong you can override it though.
+                        </para>
+                    </tip>
+                </para>
+            </section>
+
+            <section>
+                <title>Number of times to retry bad sectors</title>
+                <para>
+                    When it's finished getting all of the good data off of the drive, GNU ddrescue will retry all of the bad sectors it's found. You can use this option to skip this step, or run it as many times as you want. Values range from 0 - 5, and then forever. The default of 2 is normally fine.
+                </para>
+            </section>
+
+            <section>
+                <title>Maximum number of errors before exiting</title>
+                <para>
+                    You can tell ddrescue to exit after it's enountered a certain number of bad areas on the drive. This could be useful if you're just reading through the drive to see if there are any bad sectors, or if you're impatient and want to try different settings when the threshold is reached. Values range from infinite, and 1000 - 10. You normally just want to leave this as it is.
+                </para>
+            </section>
+
+            <section>
+                <title>Number of clusters to copy at a time</title>
+                <para>
+                    On the first pass, you can set how many clusters you want ddrescue to copy at a time. It's ignored on later passes, but it can make the recovery a lot faster or slower, depending on how you set it, and what kind of disk you're recovering from.
+                </para>
+
+                <para>
+                    Values range from 32 - 256. Mostly, the default of 128 is fine, but if you find it to be slow, you can adjust it. Bugger values are often faster.
+                </para>
+            </section>
+
         </section>
 
     </chapter>
