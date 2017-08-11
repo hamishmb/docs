@@ -408,6 +408,29 @@ Free Documentation License".
         </section>
 
     </chapter>
+    <chapter xml:id="advancedfunctionality">
+        <info>
+            <title>Advanced Functionality</title>
+            <abstract>
+                <para>
+	                The last chapter covered just enough material to get you started, in case you're in a rush and something bad just happened to one of your drives. This one covers all the bases and will give you a complete understanding of how to use all the features of this software.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>Why should I use a logfile?</title>
+            <para>
+                Using a log file is always a good idea for many reasons:
+
+                <itemizedlist mark='bullet'>
+                    <listitem>
+                        <para>bob</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    </chapter>
 
     <appendix xml:id="stylelicense">
         <title>License For The Stylesheets used to generate this documentation.</title>
