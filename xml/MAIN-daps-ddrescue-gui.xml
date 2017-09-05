@@ -208,7 +208,18 @@ Free Documentation License".
                 Some other tools, such as SpinRite, tend to read the drive in sequence, and refuse to give up when they find an unreadable part of the drive. Combined with other things, this can theoretically get the data off your drive and even fix your drive. However, it could also break your drive before you get much data, especially if there are a load of bad areas at the start of the drive, but most of the rest of it is readable. Note that SpinRite is a well-respected tool, and has helped a lot of people, so I mean no disrespect to its users or authors. I would worry about using a disk again after it failed though, even if it had been fixed.
             </para>
             <para>
-                That aside, if you're an adminisrator, you might enjoy looking at ddrescue's output so you can see exactly what going on, rather than use a styled GUI. I certainly do. In this case, you're in luck: DDRescue-GUI makes it easy for you to see the output as well, if you want to. <!-- Screenshot -->
+                That aside, if you're an adminisrator, you might enjoy looking at ddrescue's output so you can see exactly what going on, rather than use a styled GUI. I certainly do. In this case, you're in luck: DDRescue-GUI makes it easy for you to see the output as well, if you want to:
+
+            <figure>
+                <title>Terminal output in DDRescue-GUI</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='ddrescuegui-detailed-output.png' width='100%'/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
             </para>
         </section>
     </chapter>
@@ -309,7 +320,17 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>The Disk Info Window</title> <!-- Screenshot -->
+            <title>The Disk Info Window</title> <!-- mac Screenshot -->
+            <figure>
+                <title>DDRescue-GUI's Disk Information Window (Linux)</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='ddrescuegui-diskinfo-linux.png' width='100%'/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
             <para>
                 A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This windows shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
             </para>
@@ -331,7 +352,17 @@ Free Documentation License".
             <para>
                 That was quite a lot of introduction material there. Now we'll get started with using the GUI. Firstly, here's the main window:
 
-                <!-- Screenshot -->
+                <!-- mac Screenshot -->
+
+                <figure>
+                    <title>DDRescue-GUI's Main Window (Linux)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-mainwindow-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 <caution>
                     <para>
@@ -353,20 +384,46 @@ Free Documentation License".
             <para>
                 You might have noticed the "Detailed Info" pulldown. That's use to show you more information about what's happening during your recovery. If you click on it, the window will look like this instead:
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>Detailed info in DDRescue-GUI</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-detailed-info-closeup.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 When you're doing a recovery this section will have lots of information, like this:
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>Detailed info in action in DDRescue-GUI</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-detailed-info-inaction-closeup.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
             </para>
 
             <para>
                 The next helpful thing on this window is the button called "Disk Information". This contains all the the disk information I mentioned earlier, and it's very helpful when you're trying to match device names to disks:
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>Disk info in DDRescue-GUI (Linux)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-diskinfo-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
-                For example, you can see in the screenshot that I have a device whose model is "Samsung SSD 850", and because I have that in a table with device names, I now know that my SSD's name is "/dev/sda".
+                In this example, you can see in the screenshot that I have a device whose model is "Samsung SSD 850", and because I have that in a table with device names, I now know that my SSD's name is "/dev/sda".
+
+                <!-- Mac screenshot and example blurb -->
 
             </para>
 
@@ -387,7 +444,15 @@ Free Documentation License".
             <para>
                 You're pretty close to being ready to go now, but first you need to check the settings:
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>DDRescue-GUI's Settings (Linux)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-settings-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 You might think this looks like a lot of options, and you'd be right. To help you get started quickly, there are three presets at the bottom of the window:
 
