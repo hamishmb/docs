@@ -11,6 +11,7 @@ MAIN="MAIN-daps-ddrescue-gui.xml"
 ##--------------------
 ## Optional Parameters
 ROOTID=""
+XSLTPARAM="--stringparam=admon.graphics=1 --stringparam=navig.graphics=1"
 
 ##-------------------
 ## Custom Stylesheets

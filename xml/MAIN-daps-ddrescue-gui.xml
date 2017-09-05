@@ -152,7 +152,17 @@ Free Documentation License".
         </info>
 
         <section>
-            <title>What is GNU ddrescue?</title> <!--TODO Screenshot of ddrescue in action-->
+            <title>What is GNU ddrescue?</title>
+            <figure>
+                <title>GNU ddrescue in action</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='ddrescue.png' width='100%'/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
             <para>
                 GNU ddrescue is a data recovery program, written by Antonio Diaz Diaz. It's amazingly powerful, and has a lot of features other tools don't have, such as the ability to use a log file, which means that if your system crashes during a recovery, you can start again where you left off.
             </para>
@@ -168,7 +178,16 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>What is DDRescue-GUI?</title> <!--TODO Screenshot of DDRescue-GUI in action-->
+            <title>What is DDRescue-GUI?</title>
+            <figure>
+                <title>DDRescue-GUI in action</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='ddrescuegui-in-action.png' width='100%'/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
             <para>
                 DDRescue-GUI aims to bring GNU ddrescue to a wider audience by providing a graphical interface. DDRescue-GUI is cross platform, running on macOS and Linux. On macOS, DDRescue-GUI comes with a precompiled copy of ddrescue, so you can just install it and get to work. The GUI also provides other features not present in ddrescue, such as disk information, to help make sure you select the right disks for your recovery, auto-unmounting of devices (I will explain this later), and useful tips and suggestions to help you get set up.
             </para>
@@ -539,7 +558,96 @@ Free Documentation License".
             </section>
 
         </section>
+        <section>
+            <title>Device-Device recoveries</title>
+            <para>
+                Device to device recoveries are a little bit more difficult than device to file recoveries. The main process is the same, but:
 
+                <warning>
+                    <para>
+                        You must be _absolutely_ sure that the device you're recovering to is really the device you intend to recover to!
+                    </para>
+                </warning>
+
+                Sadly, it often happens that people make a mistake at this point, and overwrite important data. Make sure that you use the Disk Information Window to double and triple check that the device you're recovering to is the right one. Do NOT continue until you're absolutely sure.
+            </para>
+
+            <para>
+                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this:
+                <!-- TODO image -->
+                
+                <note>
+                    <para>
+                        You may need to select "Show All Files/Devices" in the file dialog to find what you're looking for. On macOS you might have difficulty navigating to /dev, as it is hidden. <!-- TODO help! -->
+                    </para>
+                </note>
+
+                If you do select a device as your destination, the GUI will warn you like this:
+
+                <!-- TODO image -->
+
+                After this point, follow the instructions as usual, making sure the "Overwrite output file/disk" options is left enabled. This leads us quite nicely on to the next topic.
+            </para>
+        </section>
+
+        <section>
+            <title>Recovering individual files with DDRescue-GUI</title>
+            <para>
+                <!-- Check this works :P TODO -->
+                Seeing as you can recover from device files, it stands to reason that you can recover indivdual files as well. Just select them under the source option, and create a new file under the destination, and all should be fine. Again, you may need to select "View All Files/Devices" in the file dialog to see most files.
+
+                <important>
+                    <para>
+                        Make sure that you haven't got "Direct Disk Access" checked in the settings window, as it may cause strange behaviour on Linux, and won't work at all on macOS.
+                    </para>
+                </important>
+
+                <note>
+                    <para>
+                        If you're wondering why this is helpful, it might be if you've only got a few files you care about oa failing drive, and you've checked that you can't read/copy them the normal way. This should work especialy well if they're large files.
+                    </para>
+                </note>
+            </para>
+        </section>
+
+        <section>
+            <title>Mounting Output Files</title>
+            <para>
+                This is one of the most helpful features of DDRescue-GUI, especially to people who are new to data recovery or are not technically-minded. It allows you to view all the data you recovered easily. The procedure is a bit different depending on whether you recovered a partition or a device, but it is very similar.
+            </para>
+
+            <section>
+                <title>When recovering from an entire device</title>
+                <para>
+                    When your recovery is finished, click "Mount Image/Disk". You will be presented with a window that looks like this:
+
+                    <!-- TODO Image -->
+
+                    The information here is like the Disk Information Window, but more basic. Select a partition you want to mount, and click okay. After a few seconds, you should see this:
+
+                    <!-- TODO Image -->
+
+                    <tip>
+                        <para>
+                            Don't worry if you select the wrong partition; you can just try again. Often, there will be a few partitions that are unmountable. These don't hold any meaningful data, so don't worry about it, just pick a different partition and try again until you find your data.
+                        </para>
+                    </tip>
+
+                    And simply navigate to where your files are, and view or copy as desired. When you're finished, cluck "Unmount", and you'll be returned to the previous window.
+                </para>
+            </section>
+
+            <section>
+                <title>When recovering from a partition</title>
+                <para>
+                    This is a bit simpler; just click "Mount Image-Disk", and it'll do it for you. After a few seconds, you'll see:
+
+                    <!-- TODO Image -->
+
+                    And then navigate to where your files are. When you're finished, click "Unmount", and you'll be returned to the previous window.
+                </para>
+            </section>
+        </section>
     </chapter>
 
     <appendix xml:id="stylelicense">
