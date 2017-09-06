@@ -444,6 +444,7 @@ Free Documentation License".
             <para>
                 You're pretty close to being ready to go now, but first you need to check the settings:
 
+                <!-- Mac screenshot -->
                 <figure>
                     <title>DDRescue-GUI's Settings (Linux)</title>
                     <mediaobject>
@@ -456,7 +457,15 @@ Free Documentation License".
 
                 You might think this looks like a lot of options, and you'd be right. To help you get started quickly, there are three presets at the bottom of the window:
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>DDRescue-GUI's Settings Presets</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-settings-presets.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 If you're in a hurry to get started, just click one of these and then save the settings, and it should be fine. If you think your disk is mostly readable, go with "Fastest". If you aren't sure, "Balanced" is a good all-around choice. I you know that your disk is heavily damaged, pick "Best".
 
@@ -482,9 +491,17 @@ Free Documentation License".
                     </para>
                 </caution>
 
-                Hopefully, you're seeing something like this:
+                Hopefully, you're seeing something like this: <!-- Mac screenshot? -->
 
-                <!-- Screenshot -->
+                <figure>
+                    <title>DDRescue-GUI's Settings (Linux)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-in-action.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 And if you want to, click on the "Detailed Info" dropdown I mentioned before to see what's going on in more detail. At this point, you probably just need to let your system get on with it. Data recovery can take hours, days, or even weeks. Hopefully, in your case, you will have a speedy recovery, but it all depends on how badly your disk was damaged, and what kind of damage it has taken.
 
@@ -638,18 +655,48 @@ Free Documentation License".
             </para>
 
             <para>
-                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this:
-                <!-- TODO image -->
-                
+                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this: <!-- TODO mac images. -->
+                <figure>
+                    <title>Manually selecting an output file/device (1)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-output-specify-option-1.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Then you'll need to navgate to /dev like this:
+
+                <figure>
+                    <title>Navigating to /dev on Linux</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='navigating-to-dev-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+   
                 <note>
                     <para>
                         You may need to select "Show All Files/Devices" in the file dialog to find what you're looking for. On macOS you might have difficulty navigating to /dev, as it is hidden. <!-- TODO help! -->
                     </para>
                 </note>
 
-                If you do select a device as your destination, the GUI will warn you like this:
+                If you do select a device or an existing file as your destination, the GUI will warn you like this:
 
-                <!-- TODO image -->
+                <!-- TODO mac image -->
+
+                <figure>
+                    <title>Confirming your destination</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-output-file-warning-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 After this point, follow the instructions as usual, making sure the "Overwrite output file/disk" options is left enabled. This leads us quite nicely on to the next topic.
             </para>
@@ -658,7 +705,7 @@ Free Documentation License".
         <section>
             <title>Recovering individual files with DDRescue-GUI</title>
             <para>
-                <!-- Check this works :P TODO -->
+                <!-- Check this works on mac :P TODO -->
                 Seeing as you can recover from device files, it stands to reason that you can recover indivdual files as well. Just select them under the source option, and create a new file under the destination, and all should be fine. Again, you may need to select "View All Files/Devices" in the file dialog to see most files.
 
                 <important>
@@ -684,13 +731,41 @@ Free Documentation License".
             <section>
                 <title>When recovering from an entire device</title>
                 <para>
-                    When your recovery is finished, click "Mount Image/Disk". You will be presented with a window that looks like this:
+                    When your recovery is finished, click "Mount Image/Disk".
 
-                    <!-- TODO Image -->
+                    <figure>
+                        <title>The mount button</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-mountbutton.png' width='100%'/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+
+                    You will be presented with a window that looks like this:
+
+                    <figure>
+                        <title>Selecting a partition (Linux)</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='ddrescuegui-select-partition-linux.png' width='100%'/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
 
                     The information here is like the Disk Information Window, but more basic. Select a partition you want to mount, and click okay. After a few seconds, you should see this:
 
-                    <!-- TODO Image -->
+                    <figure>
+                        <title>Successfully mounting a partition in your device.</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-devicemounted.png' width='100%'/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
 
                     <tip>
                         <para>
@@ -707,7 +782,15 @@ Free Documentation License".
                 <para>
                     This is a bit simpler; just click "Mount Image-Disk", and it'll do it for you. After a few seconds, you'll see:
 
-                    <!-- TODO Image -->
+                    <figure>
+                        <title>Successfully mounting your partition.</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-partitionmounted.png' width='100%'/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
 
                     And then navigate to where your files are. When you're finished, click "Unmount", and you'll be returned to the previous window.
                 </para>
