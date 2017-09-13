@@ -152,7 +152,7 @@ Free Documentation License".
         </info>
 
         <section>
-            <title>What is GNU ddrescue?</title>
+            <title>What is GNU ddrescue?</title> <!-- Link to ddresuce docs -->
             <figure>
                 <title>GNU ddrescue in action</title>
                 <mediaobject>
@@ -220,6 +220,43 @@ Free Documentation License".
                 </mediaobject>
             </figure>
 
+            </para>
+        </section>
+
+        <section>
+            <title>System Requirements</title>
+            <para>
+                DDRescue-GUI is designed to be lightweight, so it will run on most systems.
+            </para>
+
+            <para>
+                Linux Users: You need to be running a modern Linux distribution. Anything made after about 2014 should be fine. More specifically:
+
+                <itemizedlist mark='bullet'>
+                    <listitem><para>Fedora 25 and Higher, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Ubuntu 14.04 and Higher, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Any recent version of Parted Magic.</para></listitem>
+                    <listitem><para>Theoretically, any other similar Linux distributions, like Slackware, Debian and Red Hat Linux.</para></listitem>
+                </itemizedlist>
+                
+            </para>
+
+            <para>
+                Mac Users: Shouldn't be a problem for any even slightly modern mac. Specifically:
+
+                <itemizedlist mark='bullet'>
+                    <listitem><para>macOS 10.9 (Mavericks) and Higher.</para></listitem>
+                    <listitem><para>64-bit Intel macs only.</para></listitem>
+                </itemizedlist>
+
+                If you really need to run DDRescue-GUI on an older mac, run v1.6.1. This is an old version, and no longer updated, but it will work on:
+
+                <itemizedlist mark='bullet'>
+                    <listitem><para>macOS 10.6 (Snow Leopard) and Higher.</para></listitem>
+                    <listitem><para>32-bit and 64-bit Intel macs (choose at download time).</para></listitem>
+                </itemizedlist>
+
+                Note that there is absolutely no support whatsoever for macOS versions earlier than 10.6, and PowerPC macs.
             </para>
         </section>
     </chapter>
@@ -503,7 +540,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-settings-pre-sets.png' width='100%'/>
+                            fileref='ddrescuegui-settings-presets.png' width='100%'/>
                         </imageobject>
                     </mediaobject>
                 </figure>
