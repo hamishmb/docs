@@ -320,13 +320,23 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>The Disk Info Window</title> <!-- mac Screenshot -->
+            <title>The Disk Info Window</title>
             <figure>
                 <title>DDRescue-GUI's Disk Information Window (Linux)</title>
                 <mediaobject>
                     <imageobject>
                         <imagedata
                         fileref='ddrescuegui-diskinfo-linux.png' width='100%'/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <figure>
+                <title>DDRescue-GUI's Disk Information Window (Mac)</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='ddrescuegui-diskinfo-mac.png' width='100%'/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -352,14 +362,22 @@ Free Documentation License".
             <para>
                 That was quite a lot of introduction material there. Now we'll get started with using the GUI. Firstly, here's the main window:
 
-                <!-- mac Screenshot -->
-
                 <figure>
                     <title>DDRescue-GUI's Main Window (Linux)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-mainwindow-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                <figure>
+                    <title>DDRescue-GUI's Main Window (Mac)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-mainwindow-mac.png' width='100%'/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -409,7 +427,7 @@ Free Documentation License".
             </para>
 
             <para>
-                The next helpful thing on this window is the button called "Disk Information". This contains all the the disk information I mentioned earlier, and it's very helpful when you're trying to match device names to disks:
+                The next helpful thing on this window is the button called "Disk Information". This contains all the the disk information I mentioned earlier, and it's very helpful when you're trying to match device names to disks. Here are two examples of how to use it, one with Linux and one with macOS:
 
                 <figure>
                     <title>Disk info in DDRescue-GUI (Linux)</title>
@@ -423,7 +441,21 @@ Free Documentation License".
 
                 In this example, you can see in the screenshot that I have a device whose model is "Samsung SSD 850", and because I have that in a table with device names, I now know that my SSD's name is "/dev/sda".
 
-                <!-- Mac screenshot and example blurb -->
+            </para>
+            <para>
+                And now for the Mac example:
+
+                <figure>
+                    <title>Disk info in DDRescue-GUI (Mac)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-diskinfo-mac.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                In this example, you can see that there's a virtualbox hard disk with name /dev/disk0, and it has three partitions: /dev/disk0s1, /dev/disk0s2, and /dev/disk0s3. Note that the description field shows that it's an internal hard disk drive as well.
 
             </para>
 
@@ -439,18 +471,27 @@ Free Documentation License".
             </para> 
         </section>
 
-        <section>
+        <section xml:id="settingupforrecovery">
             <title>Setting up for your recovery.</title>
             <para>
                 You're pretty close to being ready to go now, but first you need to check the settings:
 
-                <!-- Mac screenshot -->
                 <figure>
                     <title>DDRescue-GUI's Settings (Linux)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-settings-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                <figure>
+                    <title>DDRescue-GUI's Settings (Mac)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-settings-mac.png' width='100%'/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -491,10 +532,10 @@ Free Documentation License".
                     </para>
                 </caution>
 
-                Hopefully, you're seeing something like this: <!-- Mac screenshot? -->
+                Hopefully, you're seeing something like this:
 
                 <figure>
-                    <title>DDRescue-GUI's Settings (Linux)</title>
+                    <title>DDRescue-GUI in action</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
@@ -505,8 +546,36 @@ Free Documentation License".
 
                 And if you want to, click on the "Detailed Info" dropdown I mentioned before to see what's going on in more detail. At this point, you probably just need to let your system get on with it. Data recovery can take hours, days, or even weeks. Hopefully, in your case, you will have a speedy recovery, but it all depends on how badly your disk was damaged, and what kind of damage it has taken.
 
-                <!-- TODO end of recovery stuff -->
+            </para>
+        </section>
 
+        <section>
+            <title>Finishing your recovery</title>
+            <para>
+                When you're recovery is finished, you should see something like this:
+
+                <!-- Screenshots -->
+
+                Hopefully, you have all of your data, in which case you can now mount your output file/device to read it if you like. To read about how to do that, go to <xref linkend="mountingoutputfiles"/>.
+
+            </para>
+
+            <para>
+                If you're unlucky, or if you stopped your recovery, you might see something more like this:
+
+                <!-- Screenshots -->
+
+                If so, don't worry; you can probably still get more data back, if you specified a log file. You can simply start the recovery again, with the same settings on the main window, but try reading the input file backwards, and/or set to "Best Recovery" preset.
+
+                Those settings are here:
+
+                <!-- Screenshots -->
+
+                <caution>
+                    <para>
+                        Make sure you use the same settings on the main window, including the log file. Otherwise you might lose data or inadvertantly start from the start!
+                    </para>
+                </caution>
             </para>
         </section>
 
@@ -521,7 +590,7 @@ Free Documentation License".
             </abstract>
         </info>
 
-        <section>
+        <section xml:id="whyusealogfile">
             <title>Why should I use a logfile?</title>
             <para>
                 Using a log file is always a good idea for many reasons:
@@ -542,13 +611,13 @@ Free Documentation License".
             </para>
         </section>
 
-        <section>
+        <section xml:id="advancedsettings">
             <title>The advanced options in the settings window</title>
             <para>
                 There are a lot of options here that we didn't cover in Chapter 3, so let's get started.
             </para>
 
-            <section>
+            <section xml:id="aboutdirectdiskaccess">
                 <title>Direct Disk Access</title>
                 <para>
                     This is one of GNU ddrescue's best features. Surely, though, if we're recovering from the file that represents the device, we're reading directly from it anyway? The answer is no, for a variety of reasons.
@@ -566,7 +635,7 @@ Free Documentation License".
                 </para>
 
                 <para>
-                    Direct disk access solves this by bypassing the kernel's buffer entirely. Note that it can make recoveries slower, but you normally want to leave it enabled.
+                    Direct disk access solves this by bypassing the kernel's buffer entirely. Note that it can make recoveries slower, but you normally want to leave it enabled anyway.
                 </para>
             </section>
 
@@ -655,18 +724,24 @@ Free Documentation License".
             </para>
 
             <para>
-                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this: <!-- TODO mac images. -->
+                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this on Linux:
                 <figure>
-                    <title>Manually selecting an output file/device (1)</title>
+                    <title>Manually selecting an output device (Linux-only)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-output-specify-option-1.png' width='100%'/>
+                            fileref='ddrescuegui-output-specify-option-linux.png' width='100%'/>
                         </imageobject>
                     </mediaobject>
                 </figure>
 
-                Then you'll need to navgate to /dev like this:
+                <note>
+                    <para>
+                        On Macs, you can't yet select devices not shown in the list because they are hidden from you by macOS. In a future release of DDRescue-GUI, I will probably provide a workaround for this.
+                    </para>
+                </note>
+
+                Continue, and navigate to /dev.
 
                 <figure>
                     <title>Navigating to /dev on Linux</title>
@@ -680,13 +755,11 @@ Free Documentation License".
    
                 <note>
                     <para>
-                        You may need to select "Show All Files/Devices" in the file dialog to find what you're looking for. On macOS you might have difficulty navigating to /dev, as it is hidden. <!-- TODO help! -->
+                        You may need to select "Show All Files/Devices" in the corner of the file dialog to find what you're looking for.
                     </para>
                 </note>
 
                 If you do select a device or an existing file as your destination, the GUI will warn you like this:
-
-                <!-- TODO mac image -->
 
                 <figure>
                     <title>Confirming your destination</title>
@@ -694,6 +767,13 @@ Free Documentation License".
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-output-file-warning-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-output-file-warning-mac.png' width='100%'/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -705,12 +785,11 @@ Free Documentation License".
         <section>
             <title>Recovering individual files with DDRescue-GUI</title>
             <para>
-                <!-- Check this works on mac :P TODO -->
                 Seeing as you can recover from device files, it stands to reason that you can recover indivdual files as well. Just select them under the source option, and create a new file under the destination, and all should be fine. Again, you may need to select "View All Files/Devices" in the file dialog to see most files.
 
                 <important>
                     <para>
-                        Make sure that you haven't got "Direct Disk Access" checked in the settings window, as it may cause strange behaviour on Linux, and won't work at all on macOS.
+                        Make sure that you haven't got "Direct Disk Access" checked in the settings window, as it may cause strange behaviour.
                     </para>
                 </important>
 
@@ -722,7 +801,7 @@ Free Documentation License".
             </para>
         </section>
 
-        <section>
+        <section xml:id="mountingoutputfiles">
             <title>Mounting Output Files</title>
             <para>
                 This is one of the most helpful features of DDRescue-GUI, especially to people who are new to data recovery or are not technically-minded. It allows you to view all the data you recovered easily. The procedure is a bit different depending on whether you recovered a partition or a device, but it is very similar.
@@ -798,6 +877,244 @@ Free Documentation License".
         </section>
     </chapter>
 
+    <chapter xml:id="faqs">
+        <info>
+            <title>Frequently Asked Questions</title>
+            <abstract>
+                <para>
+	                The final chapter in this user guide has frequently asked questions, which will hopefully help resolve any issues you have. I've also added a few that I thought might be helpful.
+                </para>
+            </abstract>
+        </info>
+        
+        <section>
+            <title>Setup-related Questions</title>
+            <qandaset defaultlabel="qanda">
+                <qandaentry>
+                    <question>
+                        <para>Why do I need to use a logfile?</para>
+                    </question>
+                    <answer>
+                        <para>There's are lots of reasons, and it really is very important. See <xref linkend="whyusealogfile"/>.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>What is "Direct Disk Access"?</para>
+                    </question>
+                    <answer>
+                        <para>Mostly, you should just leave this on, because it usually makes it easier to read damaged drives and helps you recover more data. If you want to know how it works, see <xref linkend="aboutdirectdiskaccess"/>.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why is the read backwards option helpful?</para>
+                    </question>
+                    <answer>
+                        <para>If the very start of your disk is difficult to read, it may enable you to get most of the data more quickly. If you think your drive is about to stop working completely, this could help you a lot.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I recover to optical (CD/DVD/Bluray) drives?</para>
+                    </question>
+                    <answer>
+                        <para>Unfortunately, no. This would be difficult to implement, and also writing to these drives is slow; if you think your source drive might be about to die, the last thing you want is to hold it up writing a disk.
+                        </para>
+                        <para>
+                            You could recover to an image file, then use tools to split that file into CD/DVD sized chunks and write them, but that may not be helpful anyway; sometimes you need to repair filesystems and so on before you can read data. Reading disks like that would be difficult as well, and more suitable for a backup program to do.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I run more than one instance of DDRescue-GUI at once?</para>
+                    </question>
+                    <answer>
+                        <para>At the time of writing, no. While there's nothing stopping you from doing this, the log file would be open twice, and would probably corrupt. So, you probably CAN do it, but I haven't tested that scenario, and your logfile would probably be corrupted and unusable if anything went wrong.</para>
+
+                        <para>Note that I might add support for this in a future release.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I restart DDRescue-GUI after aborting my recovery?</para>
+                    </question>
+                    <answer>
+                        <para>Absolutely. Just make sure you have exactly the same input, output, and log file settings, and you should be good to go. You can safely change the settings in Settings Window, which allows yo to try different approaches to get your data more quickly.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>What preset/settings should I use?</para>
+                    </question>
+                    <answer>
+                        <para>See <xref linkend="settingupforrecovery"/> for the basics. If you want more details, have a look at <xref linkend="advancedsettings"/>.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>MacOS: Where are the /dev/rdisk* devices?</para>
+                    </question>
+                    <answer>
+                        <para>They are intentionally hidden. If you want to use direct disk access, pick your device the usual way, and tick "Use Direct Disk Access" in the settings window.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I use a domain logfile/mapfile to speed my recovery up with DDRescue-GUI?</para>
+                    </question>
+                    <answer>
+                        <para>At the time of writing, you can't. This is because DDRescue-GUI supports old versions of ddrescue that don't have that feature, and the process of making a domain mapfile is different for different filesystems; it would probably become complicated, and it would be hard to make a simple interface for this.</para>
+
+                        <para>Nevertheless, I might implement this in a future release if there is demand for it.</para>
+                    </answer>
+                </qandaentry> 
+                <qandaentry>
+                    <question>
+                        <para>Can I use DDRescue-GUI to recover from encrypted volumes?</para>
+                    </question>
+                    <answer>
+                        <para>Possibly. On Linux, LUKS encryption doesn't work with DDRescue-GUI at the moment, but other encryption methods may work, but I haven't tested the GUI with them. The same goes for MacOS encryption, so your milage may vary; it may work, but is untested at the time of writing.</para>
+                    </answer>
+                </qandaentry>
+            </qandaset>
+        </section>
+
+        <section>
+            <title>Runtime Questions</title>
+            <qandaset defaultlabel="qanda">
+                <qandaentry>
+                    <question>
+                        <para>The remaining time doesn't seem very accurate, why is that?</para>
+                    </question>
+                    <answer>
+                        <para>My algorithm for calculating this is very simple, so if you have a large bad area of a disk, and then lots of easily-readable data, the time estimate might take a while to adjust. New versions of GNU ddrescue have a better estimate, so you can show terminal output to see that if you like. If you can't see it, you'll just have to make do with the GUI's estimate, which I may improve in the future.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Recovery is very slow, why?</para>
+                    </question>
+                    <answer>
+                        <para>This is quite normal, sadly. It's much harder to read damaged disks than good ones, so transfer rates can be only a few KB/s or worse. You can try different settings in the settings window to see if that improves the situation.</para>
+
+                        <para>Note that on certain types of drive with flash memory, like USB sticks and SD cards, using the "Best Recovery" preset can slow you down. Instead try "Balanced", or try turning direct disk access off.</para>
+                    </answer>
+                </qandaentry>
+            </qandaset>
+        </section>
+
+        <section>
+            <title>After-recovery Questions</title>
+            <qandaset defaultlabel="qanda">
+                <qandaentry>
+                    <question>
+                        <para>Should I mount my output file/device?</para>
+                    </question>
+                    <answer>
+                        <para>It really depends on what you want to do. If you want to check what kind of state your data is in, it might be helpful. You might even be able to start copying data from, say, an image file to a USB stick if it is intact.</para>
+
+                        <para>However, you may find that you can't mount your output file. This is especialy likely to happen if you couldn't get all the data off your source drive, but don't worry! You can use tools like photorec and testdisk to recover your files from the outfile file/device, and you'll probably get a lot of them back still.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry xml:id="cantmountoutputfile" xreflabel="Why can't I mount my output file?">
+                    <question>
+                        <para>Why can't I mount my output file?</para>
+                    </question>
+                    <answer>
+                        <para>It could be because you didn't recover enough data from your source drive, the data is damaged, or that your operating system doesn't understand the filesystem. On MacOS, you probably won't be able to read Linux partitions, and on Linux you may struggle to read exFAT, and HFS+ partitions depending on your setup.</para>
+
+                        <para>Don't panic if this happens to you. If there's more data to recover, try doing that first. If it still doesn't work, make sure the filesystem is support on your OS, and then it turn try using testisk, photorec or similar tools to read the output file/device.</para>
+
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I restart DDRescue-GUI and try again?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            Yes, just make sure you use the same options on the main window. Restarting with different settings often allows you to pull more data off your drive. This work especially if it's say, a CD, and you have multiple CD drives you can try to read it with. In that case, you may need to change the input device, but make sure you get it right, and use the Disk Info window to help you.
+                        </para>
+                    </answer>
+                </qandaentry>
+
+                <qandaentry>
+                    <question>
+                        <para>How can I mount my output file/disk after closing DDRescue-GUI?</para>
+                    </question>
+                    <answer>
+                        <para>If you are recovering to a disk, just use your operating system's tools like you would with, for example, a USB drive.</para>
+
+                        <para>If you are recovering to a file, the situation is somewhat different. It's easier to just start the recovery again with the same settings and abort immediately. In future, I will make this easier to do.</para>
+                   </answer>
+                </qandaentry>
+            </qandaset>
+        </section>
+
+        <section>
+            <title>Troubleshooting Questions</title>
+            <qandaset defaultlabel="qanda">
+                <qandaentry>
+                    <question>
+                        <para>Linux: I get a warning that my ddrescue version is unsupported on startup.</para>
+                    </question>
+                    <answer>
+                        <para>First, make sure you're running the newest version of DDRescue-GUI. If you still have the error, you may be using a newer version of ddrescue than I support, in which case please try to downgrade. If you can't downgrade, you may be able to use the GUI anyway. Alternatively, if your ddrescue version is too old, the GUI will most likely not work for you, unless you can upgrade.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>MacOS: The GUI doesn't start.</para>
+                    </question>
+                    <answer>
+                        <para>Please make sure you're using a suported version of MacOS. I support versions from 10.9 (Mavericks) onwards, and I test the betas for the new versions before they come out. If you need support for and older release like 10.6, 10.7 or 10.8, try DDRescue-GUI version 1.6.1 or 1.6. Note that these older versions look slightly different, and have fewer features, so the screenshots in the guide may be slightly wrong for you. There is absolutely no support for versions of MacOS prior to 10.6, or for PowerPC Macs.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>It's taking a long time "Getting new Disk Information" when I open the GUI, why?</para>
+                    </question>
+                    <answer>
+                        <para>This is normal if you have a lot of disks, or an older computer. If you think the GUI has crashed, try rebooting your computer and starting DDRescue-GUI again.</para>
+
+                        <para>If you're still having trouble, you may have disks the GUI doesn't support, so remove any external disks and try again. Note that encrypted disks are not supported and may cause problems.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>The information/formatting is wrong on the GUI</para>
+                    </question>
+                    <answer>
+                        <para>Linux Users: Please check that you're using a supported version of ddrescue. You can check in the About window. If you don't have a supported version of GNu ddrescue, you will see a warning when you start the GUI.</para>
+
+                        <para>Mac Users: Check that you're using a supported version of MacOS (10.9 or higher). If you are, please report this bug to me by contacting me at <link xlink:href="http://www.launchpad.net/~hamishmb">www.launchpad.net/~hamishmb</link>.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>The GUI crashed while recovering data! Help!</para>
+                    </question>
+                    <answer>
+                        <para>It's very unlikely that this would happen, but nevertheless:</para>
+
+                        <para>Don't panic. Your data is almost definitely fine. Rebot your computer, select all the same settings, and try again. Note that this issue is more likely to happen if you're using an unsupported version of ddrescue.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>I can't mount my output file!</para>
+                    </question>
+                    <answer>
+                        <para>See <xref linkend="cantmountoutputfile"/>.</para>
+                    </answer>
+                </qandaentry>
+            </qandaset>
+        </section>
+    </chapter>
     <appendix xml:id="stylelicense">
         <title>License For The Stylesheets used to generate this documentation.</title>
         <para>
