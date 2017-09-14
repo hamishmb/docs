@@ -69,7 +69,7 @@ Free Documentation License".
                 <varlistentry>
                     <term>Basic Information About DDRescue-GUI</term>
                     <listitem>
-                        <para><emphasis role="italic">Information on how to install DDRescue-GUI on different platforms, *** ADD MORE ***</emphasis></para>
+                        <para><emphasis role="italic">Why you should use it, what systems it works on, and what GNU ddrescue is.</emphasis></para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -88,6 +88,12 @@ Free Documentation License".
                     <term>Advanced Functionality</term>
                     <listitem>
                         <para><emphasis role="italic">Advanced functionality of ddrescue and DDRescue-GUI, including use of log files, mounting output files, and explanations of advanced options and when/why to use them.</emphasis></para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Frequently Asked Questions and Troubleshooting</term>
+                    <listitem>
+                        <para><emphasis role="italic">Some of the questions I get asked a lot, and also some extras to help you if you encounter problems.</emphasis></para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -152,7 +158,7 @@ Free Documentation License".
         </info>
 
         <section>
-            <title>What is GNU ddrescue?</title> <!-- Link to ddresuce docs -->
+            <title>What is GNU ddrescue?</title>
             <figure>
                 <title>GNU ddrescue in action</title>
                 <mediaobject>
@@ -173,7 +179,11 @@ Free Documentation License".
                 That's where the difficulty comes in, though. Firstly, ddrescue is a command-line tool, which means only people who are used to using the text-only command-line are going to be able to use it. It's possible to figure it out anyway, but if you're not confident that you're doing it right you could cause loss of data. Despite this, ddrescue is probably still the best data recovery tool out there.
             </para>
             <para>
-                The second problem is that while ddrescue will run on macOS and Windows, you have to compile it, which is often slow, difficult, and confusing, especially if you aren't used to doing this sort of thing. All of that is probably enough to turn some people away from using ddrescue, sadly. DDRescue-GUI provides a graphical interface for ddrescue, and solves some of these other problems as well.
+                The second problem is that while ddrescue will run on macOS and Windows, you have to compile it, which is often slow, difficult, and confusing, especially if you aren't used to doing this sort of thing. DDRescue-GUI provides a graphical interface for ddrescue, and solves some of these other problems as well.
+            </para>
+
+            <para>
+                Nevertheless, remember that GNU ddrescue is an excellent tool. For more information about ddrescue, see <link xlink:href="https://www.gnu.org/software/ddrescue/">https://www.gnu.org/software/ddrescue/</link>.
             </para>
         </section>
 
@@ -589,9 +599,23 @@ Free Documentation License".
         <section>
             <title>Finishing your recovery</title>
             <para>
-                When you're recovery is finished, you should see something like this:
+                When your recovery is finished, you should see something like this:
 
-                <!-- Screenshots -->
+                <figure>
+                    <title>Recovery Success</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-recovery-success-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-recovery-success-mac.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 Hopefully, you have all of your data, in which case you can now mount your output file/device to read it if you like. To read about how to do that, go to <xref linkend="mountingoutputfiles"/>.
 
@@ -600,13 +624,35 @@ Free Documentation License".
             <para>
                 If you're unlucky, or if you stopped your recovery, you might see something more like this:
 
-                <!-- Screenshots -->
+                <figure>
+                    <title>Recovery Failure/Aborted</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-recovery-aborted-linux.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-recovery-aborted-mac.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 If so, don't worry; you can probably still get more data back, if you specified a log file. You can simply start the recovery again, with the same settings on the main window, but try reading the input file backwards, and/or set to "Best Recovery" preset.
 
                 Those settings are here:
 
-                <!-- Screenshots -->
+                <figure>
+                    <title>Reverse read, and preset.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='ddrescuegui-settings-retryhighlights.png' width='100%'/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
                 <caution>
                     <para>
