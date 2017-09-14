@@ -970,6 +970,14 @@ Free Documentation License".
             <qandaset defaultlabel="qanda">
                 <qandaentry>
                     <question>
+                        <para>Can I run DDRescue-GUI on Windows?</para>
+                    </question>
+                    <answer>
+                        <para>No, but I might add support in a future release if there's demand.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
                         <para>Why do I need to use a logfile?</para>
                     </question>
                     <answer>
