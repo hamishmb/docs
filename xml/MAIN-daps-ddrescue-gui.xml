@@ -597,23 +597,24 @@ Free Documentation License".
                 When your recovery is finished, you should see something like this:
 
                 <figure>
-                    <title>Recovery Success</title>
+                    <title>Recovery Success (Linux)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-recovery-success-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
+                </figure>
 
+                <figure>
+                    <title>Recovery Success (Mac)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-recovery-success-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
-
                 </figure>
-
                 Hopefully, you have all of your data, in which case you can now mount your output file/device to read it if you like. To read about how to do that, go to <xref linkend="mountingoutputfiles"/>.
 
             </para>
@@ -622,13 +623,17 @@ Free Documentation License".
                 If you're unlucky, or if you stopped your recovery, you might see something more like this:
 
                 <figure>
-                    <title>Recovery Failure/Aborted</title>
+                    <title>Recovery Failure/Aborted (Linux)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-recovery-aborted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
+                </figure>
+
+                <figure>
+                    <title>Recovery Failure/Aborted (Mac)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
@@ -842,14 +847,17 @@ Free Documentation License".
                 If you do select a device or an existing file as your destination, the GUI will warn you like this:
 
                 <figure>
-                    <title>Confirming your destination</title>
+                    <title>Confirming your destination (Linux)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
                             fileref='ddrescuegui-output-file-warning-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
+                </figure>
 
+                <figure>
+                    <title>Confirming your destination (Mac)</title>
                     <mediaobject>
                         <imageobject>
                             <imagedata
