@@ -159,13 +159,13 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescue.png' width='100%'/>
+                        fileref='ddrescue.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
 
             <para>
-                GNU ddrescue is a data recovery program, written by Antonio Diaz Diaz. It's amazingly powerful, and has a lot of features other tools don't have, such as the ability to use a log file, which means that if your system crashes during a recovery, you can start again where you left off.
+                GNU ddrescue is a data recovery program, written by Antonio Diaz Diaz. It's amazingly powerful, and has a lot of features other tools don't have, such as the ability to use a recovery mapfile (previously called a log file), which means that if your system crashes during a recovery, you can start again where you left off. DDRescxue-GUI currently calls this a log file, but it will be changed to mpfile in a future release.
             </para>
             <para>
                 Other features include multiple passes over drives to try and get the easy-to-read data first, direct disk access (complicated so I will explain it later), and disk-to-disk recovery. It was originally written for Linux, ddrescue can actually run just fine on macOS and even Windows, which makes it all the more impressive. 
@@ -189,7 +189,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescuegui-in-action.png' width='100%'/>
+                        fileref='ddrescuegui-in-action.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -220,7 +220,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescuegui-detailed-output.png' width='100%'/>
+                        fileref='ddrescuegui-detailed-output.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -368,7 +368,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescuegui-diskinfo-linux.png' width='100%'/>
+                        fileref='ddrescuegui-diskinfo-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -378,7 +378,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescuegui-diskinfo-mac.png' width='100%'/>
+                        fileref='ddrescuegui-diskinfo-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -409,7 +409,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-mainwindow-linux.png' width='100%'/>
+                            fileref='ddrescuegui-mainwindow-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -419,7 +419,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-mainwindow-mac.png' width='100%'/>
+                            fileref='ddrescuegui-mainwindow-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -449,7 +449,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-detailed-info-closeup.png' width='100%'/>
+                            fileref='ddrescuegui-detailed-info-closeup.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -461,7 +461,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-detailed-info-inaction-closeup.png' width='100%'/>
+                            fileref='ddrescuegui-detailed-info-inaction-closeup.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -476,7 +476,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-diskinfo-linux.png' width='100%'/>
+                            fileref='ddrescuegui-diskinfo-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -492,7 +492,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-diskinfo-mac.png' width='100%'/>
+                            fileref='ddrescuegui-diskinfo-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -523,7 +523,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-settings-linux.png' width='100%'/>
+                            fileref='ddrescuegui-settings-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -533,7 +533,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-settings-mac.png' width='100%'/>
+                            fileref='ddrescuegui-settings-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -545,7 +545,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-settings-presets.png' width='100%'/>
+                            fileref='ddrescuegui-settings-presets.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -581,7 +581,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-in-action.png' width='100%'/>
+                            fileref='ddrescuegui-in-action.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -601,15 +601,17 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-recovery-success-linux.png' width='100%'/>
+                            fileref='ddrescuegui-recovery-success-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
+
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-recovery-success-mac.png' width='100%'/>
+                            fileref='ddrescuegui-recovery-success-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
+
                 </figure>
 
                 Hopefully, you have all of your data, in which case you can now mount your output file/device to read it if you like. To read about how to do that, go to <xref linkend="mountingoutputfiles"/>.
@@ -624,13 +626,13 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-recovery-aborted-linux.png' width='100%'/>
+                            fileref='ddrescuegui-recovery-aborted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-recovery-aborted-mac.png' width='100%'/>
+                            fileref='ddrescuegui-recovery-aborted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -644,7 +646,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-settings-retryhighlights.png' width='100%'/>
+                            fileref='ddrescuegui-settings-retryhighlights.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -808,7 +810,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-output-specify-option-linux.png' width='100%'/>
+                            fileref='ddrescuegui-output-specify-option-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -826,7 +828,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='navigating-to-dev-linux.png' width='100%'/>
+                            fileref='navigating-to-dev-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -844,14 +846,14 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-output-file-warning-linux.png' width='100%'/>
+                            fileref='ddrescuegui-output-file-warning-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
 
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='ddrescuegui-output-file-warning-mac.png' width='100%'/>
+                            fileref='ddrescuegui-output-file-warning-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -895,7 +897,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-mountbutton.png' width='100%'/>
+                                fileref='finished-mountbutton.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -907,7 +909,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='ddrescuegui-select-partition-linux.png' width='100%'/>
+                                fileref='ddrescuegui-select-partition-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -919,7 +921,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-devicemounted.png' width='100%'/>
+                                fileref='finished-devicemounted.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -944,7 +946,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-partitionmounted.png' width='100%'/>
+                                fileref='finished-partitionmounted.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1049,7 +1051,7 @@ Free Documentation License".
                 </qandaentry>
                 <qandaentry>
                     <question>
-                        <para>Can I use a domain logfile/mapfile to speed my recovery up with DDRescue-GUI?</para>
+                        <para>Can I use a domain mapfile to speed my recovery up with DDRescue-GUI?</para>
                     </question>
                     <answer>
                         <para>At the time of writing, you can't. This is because DDRescue-GUI supports old versions of ddrescue that don't have that feature, and the process of making a domain mapfile is different for different filesystems; it would probably become complicated, and it would be hard to make a simple interface for this.</para>
