@@ -901,11 +901,21 @@ Free Documentation License".
                     When your recovery is finished, click "Mount Image/Disk".
 
                     <figure>
-                        <title>The mount button</title>
+                        <title>The mount button (Linux)</title>
                         <mediaobject>
                             <imageobject>
                                 <imagedata
                                 fileref='finished-mountbutton-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+
+                    <figure>
+                        <title>The mount button (Mac)</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-mountbutton-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -922,14 +932,34 @@ Free Documentation License".
                         </mediaobject>
                     </figure>
 
+                    <figure>
+                        <title>Selecting a partition (Mac)</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='ddrescuegui-select-partition-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+
                     The information here is like the Disk Information Window, but more basic. Select a partition you want to mount, and click okay. After a few seconds, you should see this:
 
                     <figure>
-                        <title>Successfully mounting a partition in your device.</title>
+                        <title>Successfully mounting a partition in your device (Linux)</title>
                         <mediaobject>
                             <imageobject>
                                 <imagedata
                                 fileref='finished-devicemounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+
+                    <figure>
+                        <title>Successfully mounting a partition in your device (Mac)</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-devicemounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -950,11 +980,21 @@ Free Documentation License".
                     This is a bit simpler; just click "Mount Image-Disk", and it'll do it for you. After a few seconds, you'll see:
 
                     <figure>
-                        <title>Successfully mounting your partition.</title>
+                        <title>Successfully mounting your partition (Linux)</title>
                         <mediaobject>
                             <imageobject>
                                 <imagedata
                                 fileref='finished-partitionmounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+
+                    <figure>
+                        <title>Successfully mounting your partition (Mac)</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                fileref='finished-partitionmounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
