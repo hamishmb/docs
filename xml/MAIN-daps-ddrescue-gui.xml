@@ -905,7 +905,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-mountbutton.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='finished-mountbutton-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -929,7 +929,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-devicemounted.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='finished-devicemounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -954,7 +954,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-partitionmounted.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='finished-partitionmounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
