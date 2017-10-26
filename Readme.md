@@ -13,7 +13,7 @@ Currently, this documentation is available:
 
 Clone this repository and run (without the quotes):
 
-"dapd -d DC-daps-ddrescue-gui <format>"
+"daps -d DC-daps-ddrescue-gui <format>"
 
 where <format> is one of "html", "html --single", "pdf", "epub".
 
