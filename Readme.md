@@ -1,5 +1,5 @@
 The repository contains documentation for all of my programs.
-You can find html, pdf, and epub documentation for the programs on my website at www.hamishmb.altervista.org.
+You can find html, pdf, and epub documentation for the programs on my website at www.hamishmb.com.
 
 For build instructions, see below.
 
