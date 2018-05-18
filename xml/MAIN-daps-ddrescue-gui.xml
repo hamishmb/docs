@@ -51,11 +51,11 @@ Free Documentation License".
         <simplesect xml:id="WhyReadThisDoc">
             <title>Why read this document?</title>
             <para>
-            Well, for a lot of reasons. Firstly, data recovery is a complex and delicate subject, and even when using tools as powerful as GNU ddrescue, things can go wrong, especially if you're not experienced. That might sound quite negative, but in truth it's exactly why I wrote DDRescue-GUI; I've made a fair few mistakes when doing data recovery. Some of them have simply wasted a bit of time, but some of them have meant I've lost data. I'm simply fortunate that the data I lost wasn't important, but if a GUI like this had existed when I first used ddrescue, I could have avoided making some of those mistakes. I wrote this book so you can avoid making some of the mistakes I've made.
+            Well, for a lot of reasons. Firstly, data recovery is a complex and delicate subject, and even when using tools as powerful as GNU ddrescue, things can go wrong, especially if you're not experienced. That might sound quite negative, but in truth it's exactly why I wrote DDRescue-GUI; I've made a fair few mistakes when doing data recovery. Some of them have simply wasted a bit of time, but some of them have meant I've lost data. I'm simply fortunate that the data I lost wasn't important, but if a GUI like this had existed when I first used ddrescue, I could have avoided making some of those mistakes. I wrote this guide so you can avoid making some of the mistakes I've made.
             </para>
 
             <para>
-            The other reason is that while (and, perhaps, because) GNU ddrescue is extraordinarily powerful, it can be quite confusing to use. It has a lot of options, some of which are generally useful, and some of which apply more to corner-cases, so I hope this document will be helpful when you're deciding which options to use. When writing the GUI, I've tried to help you make the best decisions by using reasonable defaults, but here I will explain the options properly, which should help with some of the confusion some of my users have experienced.
+            The other reason is that while (and, perhaps, because) GNU ddrescue is extraordinarily powerful, it can be quite confusing to use. It has a lot of options, some of which are generally useful, and some of which apply more to corner-cases, so I hope this document will be helpful when you're deciding which options to use. When writing the GUI, I've tried to help you make the best decisions by using reasonable defaults, but here I will explain the options in detail, which should help with some of the confusion some of my users have experienced.
             </para>
 
         </simplesect>
@@ -63,7 +63,7 @@ Free Documentation License".
         <simplesect xml:id="SubjectCoverage">
             <title>What is covered in this document?</title>
             <para>
-            Hopefully, it covers anything you might want to know about DDRescue-GUI, ddrescue, and data recovery in general. I know that's a large undertaking for a small book, so at various points I may direct you to read other materials for more detail in particular areas.
+            Hopefully, it covers anything you might want to know about DDRescue-GUI, ddrescue, and data recovery in general. I know that's a large undertaking for a small guide, so at various points I may direct you to read other materials for more detail in particular areas.
             </para>
 
             <para>To be specific, this document covers:</para>
@@ -108,14 +108,16 @@ Free Documentation License".
             </para>
 
             <caution>
-                <para>Some general advice about how to do something, or what you should check.</para>
+                <para>
+                Some general advice about how to do something, or what you should check.
+                </para>
             </caution>
 
             <para>Alternately, if there's some important information you need to read, I'll use this:</para>
 
             <important>
                 <para>
-                You need to do x before you can safely do y.
+                Some important information which may apply in a few scenarios.
                 </para>
             </important>
 
@@ -123,7 +125,8 @@ Free Documentation License".
 
             <note>
                 <para>
-                If you're using macOS, you might see x instead.
+                These are used to point out little pieces of information that may serve as shortcuts or as
+                platform-specific features.
                 </para>
             </note>
 
@@ -131,7 +134,7 @@ Free Documentation License".
 
             <tip>
                 <para>
-                Remember that you should check your ddrescue version is supported before using this program.
+                These might suggest something extra or optional you can do in particular circumstances.
                 </para>
             </tip>
 
@@ -139,7 +142,8 @@ Free Documentation License".
 
             <warning>
                 <para>
-                If you try to read this documentation using Internet Explorer 6, you may have a poor viewing experience.
+                These are used to emphasise important part of instructions, or instructions that may have
+                severe consequences if followed improperly.
                 </para>
             </warning>
         </simplesect>
@@ -171,13 +175,13 @@ Free Documentation License".
                 GNU ddrescue is a data recovery program, written by Antonio Diaz Diaz. It's amazingly powerful, and has a lot of features other tools don't have, such as the ability to use a recovery mapfile (previously called a log file), which means that if your system crashes during a recovery, you can start again where you left off. DDRescue-GUI currently calls this a log file, but it will be changed to mapfile in a future release.
             </para>
             <para>
-                Other features include multiple passes over drives to try and get the easy-to-read data first, direct disk access (complicated so I will explain it later), and disk-to-disk recovery. It was originally written for Linux, ddrescue can actually run just fine on macOS and even Windows, which makes it all the more impressive. 
+                Other features include multiple passes over drives to try and get the easy-to-read data first, direct disk access (complicated so I will explain it later), and disk-to-disk recovery. It was originally written for Linux, ddrescue can actually run just fine on macOS and even Windows, which makes it all the more impressive. Note that DDRescue-GUI doesn't currently run on Windows, but may do so in a later release.
             </para>
             <para>
                 That's where the difficulty comes in, though. Firstly, ddrescue is a command-line tool, which means only people who are used to using the text-only command-line are going to be able to use it. It's possible to figure it out anyway, but if you're not confident that you're doing it right you could cause loss of data. Despite this, ddrescue is probably still the best data recovery tool out there.
             </para>
             <para>
-                The second problem is that while ddrescue will run on macOS and Windows, you have to compile it, which is often slow, difficult, and confusing, especially if you aren't used to doing this sort of thing. DDRescue-GUI provides a graphical interface for ddrescue, and solves some of these other problems as well.
+                The second problem is that while ddrescue will run on macOS, you have to compile it, which is often slow, difficult, and confusing, especially if you aren't used to doing this sort of thing. DDRescue-GUI provides a graphical interface for ddrescue, and solves some of these other problems as well.
             </para>
 
             <para>
@@ -213,7 +217,7 @@ Free Documentation License".
                 Let's imagine that you have an old hard drive with precious data on it, say, family photos. GNU ddrescue will try to read the easily-readable parts of the disk first, which might grab, say, 70% of your photos quickly. This is important because drives often fail quite soon after showing warning signs, and it might let you get a fair amount of data before your drive completely gives up. After this, ddrescue will make several more passes to try and get the rest of the data.
             </para>
             <para>
-                Some other tools, such as SpinRite, tend to read the drive in sequence, and refuse to give up when they find an unreadable part of the drive. Combined with other things, this can theoretically get the data off your drive and even fix your drive. However, it could also break your drive before you get much data, especially if there are a load of bad areas at the start of the drive, but most of the rest of it is readable. Note that SpinRite is a well-respected tool, and has helped a lot of people, so I mean no disrespect to its users or authors. I would worry about using a disk again after it failed though, even if it had been fixed.
+                Some other tools, such as SpinRite, tend to read the drive in sequence, and refuse to give up when they find an unreadable part of the drive. Combined with other techniques, this can theoretically get the data off your drive and even fix your drive. However, it could also break your drive before you get much data, especially if there are a load of bad areas at the start of the drive, but most of the rest of it is readable. Note that SpinRite is a well-respected tool, and has helped a lot of people, so I mean no disrespect to its users or authors. I would worry about using a disk again after it failed though, even if it had been fixed.
             </para>
             <para>
                 That aside, if you're an administrator, you might enjoy looking at ddrescue's output so you can see exactly what going on, rather than use a styled GUI. I certainly do. In this case, you're in luck: DDRescue-GUI makes it easy for you to see the output as well, if you want to:
@@ -293,7 +297,7 @@ Free Documentation License".
                 Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux and macOS, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0" (Linux), or "/dev/disk1" (macOS), which you can think of as being similar to the D: drive in Windows.
             </para>
             <para>
-                Linux and macOS tend to use different names for devices. On Linux, it's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. macOS, however, tends to call disks "/dev/disk0" (first disk in the system, usually the boot drive), "/dev/disk1" (could be a hard drive, USB drive, or optical drive), and "/dev/disk1s2" (second partition on the second drive). It's a bit easier to understand the Linux names. If you're finding this confusing, don't worry, because I will explain it more clearly along with some of the other concepts. It's quite complicated.
+                Linux and macOS tend to use different names for devices. On Linux, it's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. macOS, however, tends to call disks "/dev/disk0" (first disk in the system, usually the boot drive), "/dev/disk1" (could be a hard drive, USB drive, or optical drive), and "/dev/disk1s2" (second partition on the second drive). It's a bit easier to understand the Linux names. If you're finding this confusing, don't worry, because I will explain it more clearly later along with some of the other concepts. It's quite complicated.
             </para>
             <para>
                 Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux and macOS, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it needs to have partitions and filesystems.
@@ -303,7 +307,7 @@ Free Documentation License".
         <section>
             <title>Partitions and File Systems</title>
             <para>
-                Okay. Device names can be a bit confusing, but it'll start to make more sense soon. A partition is, literally, just a section of a hard drive or other device. Usually, you only need partitions on hard drives, and other devices like DVDs often don't have them at all. You can have many partitions on one drive, often up to 4, but sometimes more than that.
+                Okay. Device names can be a bit confusing, but it'll start to make more sense soon. A partition is, literally, just a section of a hard drive or other device. Usually, you only need partitions on hard drives, and other devices like DVDs often don't have them at all. You can have many partitions on one drive, often up to 4, but sometimes many more than that.
             </para>
             <para>
                 Right, so we have devices and partitions, but to actually store data, the partitions need a file system. This organises the files and keeps track of where they are and how large they are. A file system is what you see in Windows as, say, C:, or E:. Remember that some devices like DVDs don't need partitions, and the device has the filesystem itself.
@@ -313,26 +317,26 @@ Free Documentation License".
         <section>
             <title>"Mounting" and "Unmounting" Devices</title>
             <para>
-                You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted device get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you're finished with a drive, you should unmount it, which is usually done when you shut down your computer.
+                You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted devices get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you're finished with a drive, you should unmount it, which is usually done when you shut down your computer.
             </para>
         </section>
 
         <section>
             <title>Bad Sectors</title>
             <para>
-                A sector is a very small area of a disk. The exact size can very, but never the less, it's very small. When a sector becomes unreadable, it is called a bad sector. Bad sectors can happen because of corrosion, scratches, shock damage and so on.
+                A sector is a very small area of a disk. The exact size can very, but nevertheless, it's very small. When a sector becomes unreadable, it is called a bad sector. Bad sectors can happen because of corrosion, scratches, shock damage and so on.
             </para>
         </section>
 
         <section>
             <title>Data Corruption</title>
             <para>
-                This often happens because of bad sectors, but can also be due to power loss while writing data and many other things. Basically, it's data that can be read, but it isn't completely intact so it might not be meaningful or usable. If you're unlucky, you may find this happened to you. In that case, you'll need to use some more tools to fix your output file from DDRescue-GUI before you can use it.
+                This often happens because of bad sectors, but can also be due to power loss while writing data and many other things. Basically, it's data that can be read, but it isn't completely intact so it might not be meaningful or usable. If the sector is damaged the data may have been corrupted or misread. If you're unlucky, you may find this happened to you. In that case, you'll likely need to use some more tools to fix your output file from DDRescue-GUI before you can use it.
             </para>
         </section>
 
         <section>
-            <title>"Disks"</title>
+            <title>"Disk"</title>
             <para>
                 This is quite a vague term that can mean a lot of things. In this user guide, and in the program, a disk is a partition or device that contains a file system.
             </para>
@@ -356,7 +360,7 @@ Free Documentation License".
             </para>
 
             <para>
-                NOTE: GNU ddrescue and DDRescue-GUI aren't undelete tools, but you can often use them with undelete tools to get more data back.
+                NOTE: GNU ddrescue and DDRescue-GUI aren't undelete tools, but you can often use them alongside undelete tools to get more data back.
             </para>
         </section>
 
@@ -405,7 +409,7 @@ Free Documentation License".
             <title>Getting Started With DDRescue-GUI</title>
             <abstract>
                 <para>
-	                This chapter covers the basic functionality you'll need to use in DDRescue-GUI. It's supposed to be just enough for you to get started using DDRescue-GUI.
+	                This chapter covers the basic functionality you'll need to use in DDRescue-GUI. It's intended to be just enough for you to get started using DDRescue-GUI.
                 </para>
             </abstract>
         </info>
@@ -437,11 +441,11 @@ Free Documentation License".
 
                 <caution>
                     <para>
-                        If you're using a version of ddrescue I don't support, you'll get a warning at this point. If you see the warning, check you're running the latest version of DDRescue-GUI.
+                        If you're using a version of ddrescue I don't support, you'll get a warning at this point. If you see the warning, check you're running the latest version of DDRescue-GUI. The GUI may still run, but you may also encounter errors or formatting issues.
                     </para>
                 </caution>
 
-                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The log file is optional, and used to resume where you left off if you don't want to recover all the data at once. If you set the log file, make sure you put it on a third drive (perhaps a USB stick) for safety.
+                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The log file is optional, and used to resume where you left off if you don't want to recover all the data at once. If you set the log file, make sure you put it on a third drive (perhaps a USB stick or another hard drive) for safety.
 
                 <tip>
                     <para>
@@ -579,11 +583,11 @@ Free Documentation License".
             <para>
                 You should now be ready to start recovering data. Go ahead and click the start button.
 
-                <caution>
+                <tip>
                     <para>
                         If anything is missing or set wrong, you'll be notified at this point. If you see any warnings or errors, go back and check that you set everything up right.
                     </para>
-                </caution>
+                </tip>
 
                 Hopefully, you're seeing something like this:
 
@@ -697,7 +701,7 @@ Free Documentation License".
                     <listitem><para>It means you can resume your recovery if your system crashes for the recovery stops for any other reason.</para></listitem>
                 </itemizedlist>
 
-                Without a log file, you are imposing serious limitations on yourself and the program, and also risking your data in the case of a system crash or power outage. When you set a log file, it's a good idea to put it on a drive different to your destination drive. Put in somewhere else, like on a USB stick. This means that if you somehow overwrite the destination drive, you still have a log file.
+                Without a log file, you are imposing serious limitations on yourself and the program, and also risking your data in the case of a system crash or power outage. When you set a log file, it's a good idea to put it on a drive different to your destination drive. Put it somewhere else, like on a USB stick or a third hard drive. This means that if you somehow overwrite the destination drive, you still have a log file.
 
                 <warning>
                     <para>
@@ -727,7 +731,7 @@ Free Documentation License".
                         <listitem><para>Reading data can also be faster if we've already read that bit of data since booting.</para></listitem>
                     </itemizedlist>
 
-                    Basically, it makes our devices seem faster. When you read from a device file like "/dev/sda", the kernel manages all the reads through its buffer. The problem is that the buffer holds data in sections, of, say, 4 KB. This is normally fine, but if you can only read 3KB from disk before getting an error, you won't get ANY of that data from the kernel, because it can't fill the buffer.
+                    Basically, it makes our devices seem faster. When you read from a device file like "/dev/sda", the kernel manages all the reads through its buffer. The problem is that the buffer holds data in sections, of, say, 4 KB. This is normally fine, but if you can only read 3KB from a damaged disk before getting an error, you won't get ANY of that data from the kernel, because it can't fill the buffer.
                 </para>
 
                 <para>
@@ -762,7 +766,7 @@ Free Documentation License".
             <section>
                 <title>Soft run</title>
                 <para>
-                    As the name suggests, this option will skip over bad sectors. This option can be helpful if you want to make a really quick first pass before trying the difficult parts of the disk in some situations. Normally, it's not very helpful though, as all it does is disable the last pass, "Retrying bad sectors".
+                    As the name suggests, this option will skip over bad sectors. This option can be helpful if you want to make a really quick first pass before trying the difficult parts of the disk in some situations. Normally, it's not very helpful though, as all it does is disable the last phase, "Retrying bad sectors".
                 </para>
             </section>
 
@@ -773,7 +777,7 @@ Free Documentation License".
 
                     <tip>
                         <para>
-                            DDRescue-GUI will automatically set this option for you when it is needed. If it's wrong you can override it though.
+                            DDRescue-GUI will automatically set this option for you when it is needed. If it's set wrong by the GUI you can override it though.
                         </para>
                     </tip>
                 </para>
@@ -1066,7 +1070,7 @@ Free Documentation License".
                         <para>Can I recover to optical (CD/DVD/Bluray) drives?</para>
                     </question>
                     <answer>
-                        <para>Unfortunately, no. This would be difficult to implement, and also writing to these drives is slow; if you think your source drive might be about to die, the last thing you want is to hold it up writing a disk.
+                        <para>Unfortunately, no. This would be difficult to implement, and also writing to these drives is slow; if you think your source drive might be about to die, the last thing you want is to hold it up writing an optical disk.
                         </para>
                         <para>
                             You could recover to an image file, then use tools to split that file into CD/DVD sized chunks and write them, but that may not be helpful anyway; sometimes you need to repair filesystems and so on before you can read data. Reading disks like that would be difficult as well, and more suitable for a backup program to do.
@@ -1078,7 +1082,7 @@ Free Documentation License".
                         <para>Can I run more than one instance of DDRescue-GUI at once?</para>
                     </question>
                     <answer>
-                        <para>At the time of writing, no. While there's nothing stopping you from doing this, the log file would be open twice, and would probably corrupt. So, you probably CAN do it, but I haven't tested that scenario, and your logfile would probably be corrupted and unusable if anything went wrong.</para>
+                        <para>At the time of writing, no. While there's nothing stopping you from doing this, the GUI's log file would be open twice, and would probably corrupt. So, you probably CAN do it, but I haven't tested that scenario, and your GUI logfile would probably be corrupted and unusable if anything went wrong. Note that the recovery log file would probably be fine though.</para>
 
                         <para>Note that I might add support for this in a future release.</para>
                     </answer>
@@ -1088,7 +1092,7 @@ Free Documentation License".
                         <para>Can I restart DDRescue-GUI after aborting my recovery?</para>
                     </question>
                     <answer>
-                        <para>Absolutely. Just make sure you have exactly the same input, output, and log file settings, and you should be good to go. You can safely change the settings in Settings Window, which allows yo to try different approaches to get your data more quickly.
+                        <para>Absolutely, but only if you used a log file. Just make sure you have exactly the same input, output, and log file settings, and you should be good to go. You can safely change the settings in Settings Window, which allows you to try different approaches to get your data more quickly.
                         </para>
                     </answer>
                 </qandaentry>
@@ -1134,7 +1138,7 @@ Free Documentation License".
             <qandaset defaultlabel="qanda">
                 <qandaentry>
                     <question>
-                        <para>The remaining time doesn't seem very accurate, why is that?</para>
+                        <para>The remaining time estimate doesn't seem very accurate, why is that?</para>
                     </question>
                     <answer>
                         <para>My algorithm for calculating this is very simple, so if you have a large bad area of a disk, and then lots of easily-readable data, the time estimate might take a while to adjust. New versions of GNU ddrescue have a better estimate, so you can show terminal output to see that if you like. If you can't see it, you'll just have to make do with the GUI's estimate, which I may improve in the future.
@@ -1155,7 +1159,7 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>After-recovery Questions</title>
+            <title>Post-recovery Questions</title>
             <qandaset defaultlabel="qanda">
                 <qandaentry>
                     <question>
@@ -1172,9 +1176,9 @@ Free Documentation License".
                         <para>Why can't I mount my output file?</para>
                     </question>
                     <answer>
-                        <para>It could be because you didn't recover enough data from your source drive, the data is damaged, or that your operating system doesn't understand the filesystem. On MacOS, you probably won't be able to read Linux partitions, and on Linux you may struggle to read exFAT, and HFS+ partitions depending on your setup.</para>
+                        <para>It could be because you didn't recover enough data from your source drive, the data is damaged, or that your operating system doesn't understand the filesystem. On MacOS, you probably won't be able to read Linux-style partitions, and on Linux you may struggle to read exFAT, and HFS+ partitions depending on your setup.</para>
 
-                        <para>Don't panic if this happens to you. If there's more data to recover, try doing that first. If it still doesn't work, make sure the filesystem is support on your OS, and then in turn try using testdisk, photorec or similar tools to read the output file/device.</para>
+                        <para>Don't panic if this happens to you. If there's more data to recover, try doing that first. If it still doesn't work, make sure the filesystem is supported on your OS, and then in turn try using testdisk, photorec or similar tools to read the output file/device.</para>
 
                     </answer>
                 </qandaentry>
@@ -1184,7 +1188,7 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>
-                            Yes, just make sure you use the same options on the main window. Restarting with different settings often allows you to pull more data off your drive. This work especially if it's say, a CD, and you have multiple CD drives you can try to read it with. In that case, you may need to change the input device, but make sure you get it right, and use the Disk Info window to help you.
+                            Yes, but only if you have a log file. Just make sure you use the same options on the main window. Restarting with different settings often allows you to pull more data off your drive. This work especially if it's say, a CD, and you have multiple CD drives you can try to read it with. In that case, you may need to change the input device, but make sure you get it right, and use the Disk Info window to help you.
                         </para>
                     </answer>
                 </qandaentry>
