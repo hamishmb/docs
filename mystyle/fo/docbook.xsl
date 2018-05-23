@@ -9,6 +9,7 @@
 
     <xsl:param name="body.font.family">sans-serif</xsl:param>
     <xsl:param name="title.font.family">sans-serif</xsl:param>
+    <xsl:param name="body.font.size">12pt</xsl:param>
     
 
 </xsl:stylesheet>
