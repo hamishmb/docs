@@ -21,7 +21,7 @@ XSLTPARAM="--stringparam=admon.graphics=1 --stringparam=navig.graphics=1 --strin
 ##
 STYLEROOT="./mystyle"
 #FALLBACK_STYLEROOT=""
-#HTML_CSS=""
+HTML_CSS="./mystyle/style.css"
 #EPUB_CSS=""
 
 export DOCCONF_NAME=$BASH_SOURCE
