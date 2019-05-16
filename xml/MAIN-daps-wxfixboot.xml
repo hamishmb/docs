@@ -152,6 +152,109 @@ Free Documentation License".
         </simplesect>
     </preface>
 
+    <chapter xml:id="whatiswxfixboot">
+        <title>What is WxFixBoot?</title>
+        <info>
+            <abstract>
+                <para>
+                    WxFixBoot is an open source GUI that makes it easy to perform bootloader operations ranging from updating configuration, to reinstalling, to replacing your bootloader entirely. This chapter provides basic information about WxFixBoot and bootloaders - just enough to give you a basic understanding of what is going on. I'm going to start at the start, to make sure everything is very clear. If you already know about bootloaders and WxFixBoot, you can probably skip to the next chapter.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>What is WxFxBoot</title>
+            <figure>
+                <!-- TODO -->
+                <title>WxFixBoot in action</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='wxfixboot-in-action.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>
+            WxFixBoot's aim to to make bootloader repair and modification easy for everyone. WxFixBoot runs on multiple Linux distributions - Ubuntu, Fedora, and Parted Magic - and has the ability to perform other checks as well as modifying your bootloaders to ensure that it is safe to proceed. WxFixBoot provides other features as well, including detailed disk and system information, and useful tips and suggestions to help you get your system up and running again.
+            </para>
+        </section>
+
+        <section>
+            <title>Why should I use WxFixBoot?</title>
+            <para>
+                WxFixBoot provides a very easy way to modify and fix bootloaders on a few different Linux distributions. It also has a few unique features, such as being able to modify the bootloader for an operating system other than the one you're currently running. Additionally it can provide a summary of your system configuration and any changes that were made. This can be kept for your records, but is also useful if you need to file a support request or ask any questions after the operations are complete.
+            </para>
+
+            <para>
+                Another advantage is that WxFixBoot can be run from a live disk - you don't have to install it on your computer to use it. If you have bought a copy of Parted Magic in the last few years, you already have WxFixBoot. If not, you can download and install it on any other Ubuntu- or Fedora-based live disk, and use it from that.
+            </para>
+
+            <para>
+                Another advantage if you like to know exactly what is being done to your system - like me - is that you can view the terminal output of ongoing operations; you can have all the detail you want:
+
+            <figure>
+                <!-- TODO -->
+                <title>Terminal output in WxFixBoot</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='wxfixboot-detailed-output.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+                If this isn't enough detail for you, you can check the "Show diagnostic terminal output" checkbox to see even more:
+
+            <figure>
+                <!-- TODO -->
+                <title>Enabling Diagnostic Terminal output in WxFixBoot</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='wxfixboot-enabling-diagnostic-output.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            </para>
+
+        </section>
+
+        <section>
+            <title>System Requirements</title>
+            <para>
+                WxFixBoot is designed to be lightweight, so it will run on most systems.
+            </para>
+
+            <para>
+                You need to be running a modern Linux distribution. Anything made after about 2016 should be fine. More specifically:
+
+                <itemizedlist mark='bullet'>
+                    <listitem><para>Fedora 28 and Higher, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Ubuntu 16.04 and Higher, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Any recent version of Parted Magic.</para></listitem>
+                    <listitem><para>Theoretically, any other similar Linux distributions, like Slackware, Debian and Red Hat Linux.</para></listitem>
+                </itemizedlist>
+                
+
+                <important>
+                    <para>
+                    While you may be able to install WxFixBoot on other Linux distributions, you will almost definitely not be able to modify the bootloader on them. If they are very similar (eg Debian is similar to Ubuntu), it may be possible, but I don't recommend or support doing this. You will only be able to use WxFixBoot to modify bootloaders installed on Ubuntu and Fedora, and derivatives.
+                    </para>
+                </important>
+            </para>
+        </section>
+
+        <section>
+            <!-- TODO Note for GetDevInfo stuff -->
+            <title>Where can I download WxFixBoot?</title>
+            <para>
+                Users can download WxFixBoot from my website at <link xlink:href="https://www.hamishmb.com/html/downloads.php?program_name=wxfixboot">www.hamishmb.com</link>. This is the primary site for downloads, but you can also download the GUI from launchpad.net, from <link xlink:href="https://www.launchpad.net/wxfixboot">www.launchpad.net/wxfixboot</link>.
+            </para>
+        </section>
+                
+    </chapter>
+
     <appendix xml:id="stylelicense">
         <title>License For The Stylesheets used to generate this documentation.</title>
         <para>
