@@ -164,8 +164,9 @@ Free Documentation License".
 
         <section>
             <title>What is WxFxBoot</title>
+            <!--
             <figure>
-                <!-- TODO -->
+                <!- TODO ->
                 <title>WxFixBoot in action</title>
                 <mediaobject>
                     <imageobject>
@@ -174,6 +175,7 @@ Free Documentation License".
                     </imageobject>
                 </mediaobject>
             </figure>
+            -->
             <para>
             WxFixBoot's aim to to make bootloader repair and modification easy for everyone. WxFixBoot runs on multiple Linux distributions - Ubuntu, Fedora, and Parted Magic - and has the ability to perform other checks as well as modifying your bootloaders to ensure that it is safe to proceed. WxFixBoot provides other features as well, including detailed disk and system information, and useful tips and suggestions to help you get your system up and running again.
             </para>
@@ -192,8 +194,9 @@ Free Documentation License".
             <para>
                 Another advantage if you like to know exactly what is being done to your system - like me - is that you can view the terminal output of ongoing operations; you can have all the detail you want:
 
+            <!--
             <figure>
-                <!-- TODO -->
+                <!- TODO ->
                 <title>Terminal output in WxFixBoot</title>
                 <mediaobject>
                     <imageobject>
@@ -202,11 +205,13 @@ Free Documentation License".
                     </imageobject>
                 </mediaobject>
             </figure>
+            -->
 
                 If this isn't enough detail for you, you can check the "Show diagnostic terminal output" checkbox to see even more:
 
+            <!--
             <figure>
-                <!-- TODO -->
+                <!- TODO ->
                 <title>Enabling Diagnostic Terminal output in WxFixBoot</title>
                 <mediaobject>
                     <imageobject>
@@ -215,7 +220,7 @@ Free Documentation License".
                     </imageobject>
                 </mediaobject>
             </figure>
-
+            -->
             </para>
 
         </section>
@@ -245,14 +250,291 @@ Free Documentation License".
             </para>
         </section>
 
-        <section>
+        <section xml:id="downloadlinks">
             <!-- TODO Note for GetDevInfo stuff -->
             <title>Where can I download WxFixBoot?</title>
             <para>
                 Users can download WxFixBoot from my website at <link xlink:href="https://www.hamishmb.com/html/downloads.php?program_name=wxfixboot">www.hamishmb.com</link>. This is the primary site for downloads, but you can also download the GUI from launchpad.net, from <link xlink:href="https://www.launchpad.net/wxfixboot">www.launchpad.net/wxfixboot</link>.
             </para>
+
+            <para>
+                WxFixBot is also available on Parted Magic at <link xlink:href="https://www.partedmagic.com">www.partedmagic.com</link>
+            </para>
+
         </section>
                 
+    </chapter>
+
+    <chapter xml:id="concepts">
+        <title>Bootloader concepts</title>
+        <info>
+            <abstract>
+                <para>
+                    In order to understand and make best use of WxFixBoot, it is a very good idea to make sure you understand some of the concepts behind Linux systems and bootloaders in general. You can safely skip this chapter if you already understand the concepts, because I've gone into fairly basic detail here.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>Device Names</title>
+            <para>
+                Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux and macOS, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0" (Linux), or "/dev/disk1" (macOS), which you can think of as being similar to the D: drive in Windows.
+            </para>
+            <para>
+                Linux and macOS tend to use different names for devices. On Linux, it's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. macOS, however, tends to call disks "/dev/disk0" (first disk in the system, usually the boot drive), "/dev/disk1" (could be a hard drive, USB drive, or optical drive), and "/dev/disk1s2" (second partition on the second drive). It's a bit easier to understand the Linux names. If you're finding this confusing, don't worry, because I will explain it more clearly later along with some of the other concepts. It's quite complicated.
+            </para>
+            <para>
+                Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux and macOS, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it needs to have partitions and filesystems.
+            </para>
+        </section>
+
+        <section>
+            <title>Partitions and File Systems</title>
+            <para>
+                Okay. Device names can be a bit confusing, but it'll start to make more sense soon. A partition is, literally, just a section of a hard drive or other device. Usually, you only need partitions on hard drives, and other devices like DVDs often don't have them at all. You can have many partitions on one drive, often up to 4, but sometimes many more than that.
+            </para>
+            <para>
+                Right, so we have devices and partitions, but to actually store data, the partitions need a file system. This organises the files and keeps track of where they are and how large they are. A file system is what you see in Windows as, say, C:, or E:. Remember that some devices like DVDs don't need partitions, and the device has the filesystem itself.
+            </para>
+        </section>
+
+        <section>
+            <title>"Mounting" and "Unmounting" Devices</title>
+            <para>
+                You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted devices get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you're finished with a drive, you should unmount it, which is usually done when you shut down your computer.
+            </para>
+        </section>
+
+        <section>
+            <title>"Disk"</title>
+            <para>
+                This is quite a vague term that can mean a lot of things. In this user guide, and in the program, a disk is a partition or device that contains a file system.
+            </para>
+        </section>
+
+        <section>
+            <title>Formatting</title>
+            <para>
+                If you format a disk, you are giving it a file system. This can also mean erasing the previous filesystem and everything it contains. If you say a disk is formatted as FAT32, it means the disk has a FAT32 filesystem on it. Often when a disk is formatted, the data on it isn't actually overwritten, and it can sometimes be recovered. The same goes for deletion.
+            </para>
+        </section>
+
+        <section>
+            <title>Firmware</title>
+            <para>
+                This is the code that sets your hardware up when you first turn on your computer. It generally checks that a CPU, some memory, and other peripherals such as a graphics card and keyboard are present, amongst other things. After this is done, it executes the bootloader.
+            </para>
+
+            <para>
+                There are two different kinds of firmware. The first is called BIOS (Basic Input/Output System). This is the older kind of firmware, often found in systems from around 2008 or older, though some newer motherboards still use BIOS-based firmware.
+            </para>
+
+            <para>
+                The second, newer type of firmware is called EFI (Extensible Firmware Interface), or UEFI (Unified EFI). These terms are generally interchangable. This incorporates various modern features not found in BIOS-based systems.
+            </para>
+
+            <para>
+                These are important, because a system with EFI firmware needs an EFI-compatible bootloader, and vice versa.
+
+                <note>
+                    <para>
+                        Sometimes an EFI-based system can use something called CSM mode to boot a BIOS-based bootloader, but this isn't ideal.
+                    </para>
+                </note>
+            </para>
+        </section>
+
+        <section>
+            <title>EFI Partition/EFI System Partition</title>
+            <para>
+                This is only found on computers with EFI/UEFI firmware. This is a special partition that holds the boot files for all operating systems installed on the computer. If your system has BIOS-based firmware, you don't need one of these.
+
+                <warning>
+                    <para>
+                        If you are switching to an EFI bootloader, you must first create an EFI System Partition. The process for doing this is covered later on in the user guide.
+                    </para>
+
+                    <para>
+                        Don't worry too much - WxFixBoot won't let you install an EFI bootloader if you don't have an EFI partition.
+                    </para>
+                </warning>
+
+            </para>
+
+        </section>
+
+        <section>
+            <title>Bootloader</title>
+            <para>
+                This is started by your firmware, and it then goes on to load the operating system. There are a number of different bootloaders. GRUB is commonly used on Linux, but macOS uses something called iBoot/BootX, and Windows uses Windows Boot Manager.
+            </para>
+        </section>
+
+        <section>
+            <title>Boot Manager</title>
+            <para>
+                There is often some overlap between a bootloader and a boot manager. At the most basic level, your firmware often includes a boot manager that allows you to select what device to boot with (BIOS), or which OS to load (UEFI).
+            </para>
+
+            <para>
+                However, some bootloaders (for example GRUB, and Windows Boot Manager) can also boot other operating systems. Windows Boot Manager can boot multiple different versions of Windows. GRUB can boot various Linux distributions, older versions of macOS, and can chainload to another bootloader, for example Windows Boot Manager, so that it can tak over and load Windows.
+            </para>
+        </section>
+
+        <section>
+            <title>Live Disk</title>
+            <para>
+                This is a CD/DVD or USB stick that you can boot your computer off - much like a hard drive. These are commonly used to install Linux, or, as in this case, repair a Linux installation.
+            </para>
+        </section>
+
+        <section>
+            <title>Operating System (OS)</title>
+            <para>
+                This is the software that coordinates hardware and software, and provides standard utilities for programs to run on. Examples include Linux, Microsoft Windows, and macOS, though there are many other operating systems as well.
+            </para>
+        </section>
+
+        <section>
+            <title>Architecture</title>
+            <para>
+                There are various different architectures, but here we will only discuss the x86 (32-bit) and x86_64 (64-bit) architectures. These are relevant because WxFixBoot can repair a 32-bit OS when running on a 64-bit one, but not vice versa. For implicities' sake, always use a 64-bit OS or boot disk to run WxFixBoot, if possible.
+            </para>
+
+            <para>
+                Most boot disks and computers since 2005 are 64-bit capable now, so this shouldn't be a problem. For hybrid live disks (for example Parted Magic), make sure you're booted in 64-bit mode.
+
+                <tip>
+                    <para>
+                        There is no need to worry about this too much - WxFixBoot will not allow you to attempt to do something that is impossible. Mostly, this concept is here so you understand what is happening if you can't modify the bootloader on your Linux distro.
+                    </para>
+                </tip>
+            </para>
+        </section>
+
+        <section>
+            <title>Bootloader Timeout</title>
+            <para>
+                How long the boot menu is shown for. Often if there is just one operating system, the menu is hidden entirely. If there are multiple operating systems to choose from, the bootloader's menu is where you choose which one to boot.
+            </para>
+        </section>
+
+        <section>
+            <title>Bootloader Default OS</title>
+            <para>
+                This is the operating system that the bootloader will boot after the timeout has elapsed, if you don't select one to boot yourself.
+            </para>
+        </section>
+
+        <section>
+            <title>Bootloader's Global Kernel Options</title>
+            <para>
+                This only applies to Linux.
+            </para>
+
+            <para>
+                These are the options the bootloader passes to the Linux kernel when it starts. These are commonly things like the disk that the Linux distribution is installed on, and other special options for your hardware. For example, users of Nvidia graphics cards may have 'nomodeset' in their list of options.
+            </para>
+        </section>
+
+        <section>
+            <title>The System Info Window</title>
+            <!--
+            <figure>
+                <title>WxFixBoots's System Information Window</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='wxfixboot-systeminfo.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            -->
+            <para>
+                A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a system information window. This windows shows you device names, but also other information about disks such as size, label, the model, and the description, as well as a lot of information about bootloaders, operating systems present, and the like.
+            </para>
+        </section>
+
+    </chapter>
+
+    <chapter xml:id="faqs">
+        <info>
+            <title>Frequently Asked Questions</title>
+            <abstract>
+                <para>
+                    The final chapter in this user guide has frequently asked questions, which will hopefully help resolve any issues you have. I've also added a few that I thought might be helpful.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>Setup-related Questions</title>
+            <qandaset defaultlabel="qanda">
+                <qandaentry>
+                    <question>
+                        <para>Can I run WxFixBoot on Windows?</para>
+                    </question>
+                    <answer>
+                        <para>No, this is not possible because of the way bootloaders and bootloader installation works on Linux.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>What about macOS?</para>
+                    </question>
+                    <answer>
+                        <para>As above, this is not possible.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I repair Windows or macOS with WxFixBoot?</para>
+                    </question>
+                    <answer>
+                        <para>No, this tool is focused exclusively on repairing the bootloaders on Ubuntu- and Fedora-based Linux distributions. However, Microsoft and Apple provide various tools for repairing bootloaders for their platforms. Usually this is done with an installation disk for Windows, but both Windows and macOS systems may have recovery partitions available with tools to help.</para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why can't I modify my Linux installation's bootloader?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            There are a number of possible reasons for this:
+                        </para>
+
+                        <para>
+                            It might be that the OS or live disk you're running WxFixBoot from is 32-bit, and the OS you want to modify is 64-bit. In this case, choose the 64-bit boot option, or use a different live disk that supports 64-bit (or x64_64/AMD64) mode.
+                        </para>
+
+                        <para>
+                            Pleae ensure you only try to modify Ubuntu- and Fedora-based Linux distributions with this tool - it will **probably not** work with other ones. In cases where it *may* work - such as with Debian - be aware that you're trying this at your own risk - I will not support any attempts to use WxFixBoot on operating systems other then Ubuntu and Fedora and derivatives.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>How do I download WxFixBoot? Are there any live disks that come with WxFixBoot?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            See <xref linkend="downloadlinks"/>. Note that you can also make a custom live disk with WxFixBoot installed on it, and you can install WxFixBoot when booted from a live disk to use it that way as well.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why can't I switch to a BIOS/EFI bootloader on Fedora 30 and derivatives?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            Fedora 30 has changed the way GRUB is configured in such a way that this feature is broken on Fedora 30 and higher. I am looking for a work-around, and I will update WxFixBoot and this documentation if/when I find a way to support this again on Fedora.
+                        </para>
+                    </answer>
+                </qandaentry>
+            </qandaset>
+        </section>
+
     </chapter>
 
     <appendix xml:id="stylelicense">
