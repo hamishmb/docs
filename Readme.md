@@ -1,4 +1,4 @@
-The repository contains documentation for all of my programs.
+The repository contains Disk Verifier's User Guide.
 You can find html, pdf, and epub documentation for the programs on my website at www.hamishmb.com.
 
 For build instructions, see below.
@@ -9,11 +9,11 @@ You need DAPS (the Docbook Authoring and Publishing Suite) and all its dependenc
 
 Currently, this documentation is available:
 
--------------------- DDRescue-GUI Documentation --------------------
+-------------------- Disk Verifier Documentation --------------------
 
 Clone this repository and run (without the quotes):
 
-"daps -d DC-daps-ddrescue-gui <format>"
+"daps -d DC-daps-diskverifier <format>"
 
 where <format> is one of "html", "html --single", "pdf", "epub".
 
