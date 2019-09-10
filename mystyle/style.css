@@ -1,0 +1,66 @@
+/* Stylesheet
+This file is part of my website.
+Copyright (C) 2016-2018 Hamish McIntyre-Bhatty
+My website is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 3 or,
+at your option, any later version.
+
+My website is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with My website.  If not, see <http://www.gnu.org/licenses/>.
+
+The GNU GPL version 3 is available on the site at www.hamishmb.com/license.php.*/
+
+/* Note to self: If something refuses to work, double-check you've put a ; at the end of each line. */
+
+html {
+    background: rgb(255,255,255);
+    font-family: sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    /* Break up long words/URLs where needed */
+    -ms-word-break: break-all; /* Old IE support */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+/* -- Main Content -- */
+div.figure-contents {
+    width: 100%;
+}
+
+div.figure-contents img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 25%;
+    max-width: 100%;
+    height: 100%;
+    text-align: center; /* For alt text */
+}
+
+/* -- Headers -- */
+h1, h2, h3, h4, h5, h6, h7, h8 {
+    font-family: "Segoe UI";
+    font-weight: normal;
+    text-align: center;
+}
+
+table caption {
+    text-align: center;
+}
+
+}
