@@ -166,7 +166,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='diskverifier-in-action.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -207,14 +207,14 @@ Free Documentation License".
 
                 <itemizedlist mark='bullet'>
                     <listitem><para>A 32-bit or 64-bit x86 CPU.</para></listitem>
-                    <listitem><para>BIOS (old-style) firmware:</para></listitem>
+                    <listitem><para>BIOS (old-style) firmware:</para>
                     <itemizedlist mark='bullet'>
                         <listitem><para>At least 200 MB of system RAM.</para></listitem>
-                    </itemizedlist>
-                    <listitem><para>EFI/UEFI (new-style) firmware:</para></listitem>
+                    </itemizedlist></listitem>
+                    <listitem><para>EFI/UEFI (new-style) firmware:</para>
                     <itemizedlist mark='bullet'>
                         <listitem><para>At least 256 MB of system RAM.</para></listitem>
-                    </itemizedlist>
+                    </itemizedlist></listitem>
                     <listitem><para>A USB stick or blank CD/DVD to write the software to.</para></listitem>
                 </itemizedlist>
 
@@ -250,13 +250,13 @@ Free Documentation License".
         <section>
             <title>Device Names</title>
             <para>
-                Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux and macOS, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0" (Linux), or "/dev/disk1" (macOS), which you can think of as being similar to the D: drive in Windows.
+                Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0", which you can think of as being similar to the D: drive in Windows.
             </para>
             <para>
-                Linux and macOS tend to use different names for devices. On Linux, it's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. macOS, however, tends to call disks "/dev/disk0" (first disk in the system, usually the boot drive), "/dev/disk1" (could be a hard drive, USB drive, or optical drive), and "/dev/disk1s2" (second partition on the second drive). It's a bit easier to understand the Linux names. If you're finding this confusing, don't worry, because I will explain it more clearly later along with some of the other concepts. It's quite complicated.
+                Linux tends to use different names for devices. It's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. If you're finding this confusing, don't worry, because I will explain it more clearly later along with some of the other concepts. It's quite complicated.
             </para>
             <para>
-                Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux and macOS, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it needs to have partitions and filesystems.
+                Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it needs to have partitions and filesystems.
             </para>
         </section>
 
@@ -300,13 +300,12 @@ Free Documentation License".
             <para>
                 A new, very fast protocol used by faster SSDs to get the highest speed possible. These newer drives usually connect using a PCI Express or M.2 connector. TODO picture
             </para>
+            <note>
+                <para>
+                    There are also other drive and connector standards, such as SAS. These are also supported by Disk Verifier, but not mentioned much in this user guide because they are less common and don't affect the way that Disk Verifier works.
+                </para>            
+            </note>
         </section>
-
-        <note>
-            <para>
-                There are also other drive and connector standards, such as SAS. These are also supported by Disk Verifier, but not mentioned much in this user guide because they are less common and don't affect the way that Disk Verifier works.
-            </para>            
-        </note>
 
         <section>
             <title>ATA/SATA Secure Erase Command</title>
@@ -353,644 +352,145 @@ Free Documentation License".
         <section>
             <title>The Disk Info Window</title>
             <figure>
-                <title>DDRescue-GUI's Disk Information Window (Linux)</title>
+                <title>Disk Verifier's Disk Information Window</title>
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescuegui-diskinfo-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                    </imageobject>
-                </mediaobject>
-            </figure>
-
-            <figure>
-                <title>DDRescue-GUI's Disk Information Window (Mac)</title>
-                <mediaobject>
-                    <imageobject>
-                        <imagedata
-                        fileref='ddrescuegui-diskinfo-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
 
             <para>
-                A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This windows shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
+                A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This window shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
             </para>
         </section>
     </chapter>
 
-    <chapter xml:id="basicfunctionality">
+    <chapter xml:id="pmagicmodule">
         <info>
-            <title>Getting Started With DDRescue-GUI</title>
+            <title>Using the Disk Verifier Parted Magic Module</title>
             <abstract>
                 <para>
-	                This chapter covers the basic functionality you'll need to use in DDRescue-GUI. It's intended to be just enough for you to get started using DDRescue-GUI.
+	                This chapter covers using the Parted Magic module with the Secure Erase GUI. This is a bit simpler than the live disk, but I recommend you read this even if you have bought only the live disk, as the basics are pretty much the same.
                 </para>
             </abstract>
         </info>
 
-        <section>
-            <title>The Main Window</title>
+        <section xml:id="pmagicmoduleprep">
+            <title>Preparing the module</title>
             <para>
-                That was quite a lot of introduction material there. Now we'll get started with using the GUI. Firstly, here's the main window:
-
-                <figure>
-                    <title>DDRescue-GUI's Main Window (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-mainwindow-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <figure>
-                    <title>DDRescue-GUI's Main Window (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-mainwindow-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <caution>
-                    <para>
-                        If you're using a version of ddrescue I don't support, you'll get a warning at this point. If you see the warning, check you're running the latest version of DDRescue-GUI. The GUI may still run, but you may also encounter errors or formatting issues.
-                    </para>
-                </caution>
-
-                This window is displayed after DDRescue-GUI has finished starting up. There are 3 main things you need to set here. The "Image Source" is the damaged drive. The map file is optional, and used to resume where you left off if you don't want to recover all the data at once. If you set the map file, make sure you put it on a third drive (perhaps a USB stick or another hard drive) for safety.
-
-                <tip>
-                    <para>
-                        It's highly recommended that you use a map file. It only takes a few seconds to set up, and it means that you can stop and start the recovery as you please. It also allows you to resume your recovery if, say, there's a power outage, or your computer crashes. If that happened and you didn't use a map file you would probably have to start from the start!
-                    </para>
-                </tip>
-
-                Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file. It's a good idea to go with an image file like "recovery.img". Put it in a convenient place so you don't lose it, and make sure you have enough disk space first.
-             </para>
-
-            <para>
-                You might have noticed the "Detailed Info" pull-down. That's use to show you more information about what's happening during your recovery. If you click on it, you'll see this:
-
-                <figure>
-                    <title>Detailed info in DDRescue-GUI</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-detailed-info-closeup.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                When you're doing a recovery this section will have lots of information, like this:
-
-                <figure>
-                    <title>Detailed info in action in DDRescue-GUI</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-detailed-info-inaction-closeup.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-            </para>
-
-            <para>
-                The next helpful thing on this window is the button called "Disk Information". This contains all the the disk information I mentioned earlier, and it's very helpful when you're trying to match device names to disks. Here are two examples of how to use it, one with Linux and one with macOS:
-
-                <figure>
-                    <title>Disk info in DDRescue-GUI (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-diskinfo-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                In this example, you can see in the screen-shot that I have a device whose model is "Samsung SSD 850", and because I have that in a table with device names, I now know that my SSD's name is "/dev/sda".
-
+                This is a fairly simple process if you're using a USB stick to boot Parted Magic (which I recommend). Create your USB stick using the instructions <link xlink:href="https://partedmagic.com/creating-liveusb/">here</link>, and drop the .txz file you downloaded into "pmodules" in the "pmagic" folder.
             </para>
             <para>
-                And now for the Mac example:
-
-                <figure>
-                    <title>Disk info in DDRescue-GUI (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-diskinfo-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                In this example, you can see that there's a virtualbox hard disk with name /dev/disk0, and it has three partitions: /dev/disk0s1, /dev/disk0s2, and /dev/disk0s3. Note that the description field shows that it's an internal hard disk drive as well.
-
+                This is more complicated if you're booting from a DVD, because it involves remastering the Parted Magic ISO file.
             </para>
-
             <para>
-                So if you were starting a recovery, you'd select the image source, map file, and image destination. You also need to pick some more settings before you can start your recovery though, and these are on the settings window.
-
-                <tip>
-                    <para>
-                        If you accidentally click "Start" now, don't worry, because the GUI will prompt you to take a look at the settings first. This is designed to stop you from making mistakes and losing data.
-                    </para>
-                </tip>
-
-            </para> 
-        </section>
-
-        <section xml:id="settingupforrecovery">
-            <title>Setting up for your recovery.</title>
-            <para>
-                You're pretty close to being ready to go now, but first you need to check the settings:
-
-                <figure>
-                    <title>DDRescue-GUI's Settings (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-settings-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <figure>
-                    <title>DDRescue-GUI's Settings (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-settings-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                You might think this looks like a lot of options, and you'd be right. To help you get started quickly, there are three pre-sets at the bottom of the window:
-
-                <figure>
-                    <title>DDRescue-GUI's Settings Pre-sets</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-settings-presets.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                If you're in a hurry to get started, just click one of these and then save the settings, and it should be fine. If you think your disk is mostly readable, go with "Fastest". If you aren't sure, "Balanced" is a good all-around choice. If you know that your disk is heavily damaged, pick "Best".
-
-                <note>
-                    <para>
-                        These pre-sets set up DDRescue-GUI quickly so you can get started. If you pick the wrong option, it's okay, but it might just mean your recovery takes a bit longer. Nothing bad will happen though. If it's taking a long time, and you used a map file, feel free to stop the recovery, and then start again with a different preset. *But*, make sure you pick the same options on the main window!
-                   </para>
-                </note>
-
-                There are other options to discuss here, but this is the basic functionality section, so I'm mostly focused on getting you running at the moment. For now, save the settings and close the window.
-
+                Full instructions for this, complete with a video tutorial, are available <link xlink:href="https://www.hamishmb.com/blog/disk-verifier-parted-magic-tutorial-video-released/">on my blog</link>.
             </para>
         </section>
 
-        <section>
-            <title>Start your recovery</title>
+        <section xml:id="bootingpmagic">
+            <title>Booting Parted Magic</title>
             <para>
-                You should now be ready to start recovering data. Go ahead and click the start button.
-
-                <tip>
-                    <para>
-                        If anything is missing or set wrong, you'll be notified at this point. If you see any warnings or errors, go back and check that you set everything up right.
-                    </para>
-                </tip>
-
-                Hopefully, you're seeing something like this:
-
-                <figure>
-                    <title>DDRescue-GUI in action</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-in-action.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                If you want to, click on the "Detailed Info" drop-down I mentioned before to see what's going on in more detail. At this point, you probably just need to let your system get on with it. Data recovery can take hours, days, or even weeks. Hopefully you will have a speedy recovery, but it all depends on how badly your disk was damaged, how big it is, and what kind of damage it has taken.
-
+                Plug your USB stick in, or insert your optical media, and shut down your computer. Next you need to power it back on while holding a special key. On most keys, you need to press and hold the F12 key, and on Macs you need to press and hold the Option key. This should get you into the boot menu.
             </para>
-        </section>
-
-        <section>
-            <title>Finishing your recovery</title>
-            <para>
-                When your recovery is finished, you should see something like this:
-
-                <figure>
-                    <title>Recovery Success (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-recovery-success-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <figure>
-                    <title>Recovery Success (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-recovery-success-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-                Hopefully, you have all of your data, in which case you can now mount your output file/device to read it if you like. To read about how to do that, go to <xref linkend="mountingoutputfiles"/>.
-
-            </para>
-
-            <para>
-                If you're unlucky, or if you stopped your recovery, you might see something more like this:
-
-                <figure>
-                    <title>Recovery Failure/Aborted (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-recovery-aborted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <figure>
-                    <title>Recovery Failure/Aborted (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-recovery-aborted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                If so, don't worry; you can probably still get more data back, if you specified a map file. You can simply start the recovery again, with the same settings on the main window, but try reading the input file backwards, and/or set to "Best Recovery" preset.
-
-                Those settings are here:
-
-                <figure>
-                    <title>Reverse read, and preset.</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-settings-retryhighlights.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <caution>
-                    <para>
-                        Make sure you use the same settings on the main window, including the map file. Otherwise you might lose data or inadvertently start from the start!
-                    </para>
-                </caution>
-            </para>
-        </section>
-
-    </chapter>
-    <chapter xml:id="advancedfunctionality">
-        <info>
-            <title>Advanced Functionality</title>
-            <abstract>
+            <tip>
                 <para>
-	                The last chapter covered just enough material to get you started, in case you're in a rush and something bad just happened to one of your drives. This one covers all the bases and will give you a complete understanding of how to use all the features of this software.
+                    It can sometimes be difficult to get into the boot menu, depending on your computer. Especially on PCs, you may find you need to tap F12 rapidly.
                 </para>
-            </abstract>
-        </info>
 
-        <section xml:id="whyuseamapfile">
-            <title>Why should I use a mapfile?</title>
+                <para>
+                    While uncommon, it's also possible that you might need to press a different key. When your computer starts, see if there is any text telling you which key to press. This is usually in the bottom right-hand corner of the screen, and it may say something like "F5: Boot Menu".
+                </para>
+            </tip>
             <para>
-                Using a map file is always a good idea for many reasons:
+                Once you're gotten into your boot menu, you may be presented with a screen something like this:
 
-                <itemizedlist mark='bullet'>
-                    <listitem><para>It allows you to stop and start the recovery as and when you please.</para></listitem>
-                    <listitem><para>It allows you to restart your recovery with different settings in Settings Window if you want/need to.</para></listitem>
-                    <listitem><para>It means you can resume your recovery if your system crashes for the recovery stops for any other reason.</para></listitem>
-                </itemizedlist>
+                <figure>
+                    <title>The boot menu (PC)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
 
-                Without a map file, you are imposing serious limitations on yourself and the program, and also risking your data in the case of a system crash or power outage. When you set a map file, it's a good idea to put it on a drive different to your destination drive. Put it somewhere else, like on a USB stick or a third hard drive. This means that if you somehow overwrite the destination drive, you still have a map file.
+                This often looks different on different systems, so here are some more pictures to show what it may look like:
+
+                <figure>
+                    <title>Another boot menu (PC)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                <figure>
+                    <title>The boot menu (Mac)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </para>
+            <para>
+                Now, all you need to do is select the option that corresponds to your USB stick or optical drive. This is usually fairly easy to figure out, and might be prefixed with "USB:" or "DVD:".
+            </para>
+            <para>
+                Next you'll be presented with Parted Magic's boot menu:
+
+                <figure>
+                    <title>Parted Magic's Boot Menu</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </para>
+            <para>
+                Generally, you can just press the Enter/Return key to boot - the default options are usually fine.
+
+                <tip>
+                    <para>
+                        If it doesn't boot, you can instead boot the "Live" option, which almost always works.
+                    </para>
+                </tip>
+
+                During the bootup process, you should see the following (yellow) message appear:
+
+                <figure>
+                    <title>Parted Magic installing the Disk Verifier module</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                This is normal, and to be expected. The boot process may also seem to hang here for a little while, but it will resume.
 
                 <warning>
                     <para>
-                        If you really want to, you can opt to not use a map file. This is a really bad idea. Only do this if you've thought everything through, and are really sure you won't make use of ANY of the features in the list above.
+                        If you don't see this message, or a similar one, it indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions at <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
                     </para>
                 </warning>
             </para>
         </section>
 
-        <section xml:id="advancedsettings">
-            <title>The advanced options in the settings window</title>
+        <section xml:id="usingsecureerasegui">
+            <title>Using the Secure Erase GUI</title>
             <para>
-                There are a lot of options here that we didn't cover in Chapter 3, so let's get started.
+
             </para>
-
-            <section xml:id="aboutdirectdiskaccess">
-                <title>Direct Disk Access</title>
-                <para>
-                    This is one of GNU ddrescue's best features. Surely, though, if we're recovering from the file that represents the device, we're reading directly from it anyway? The answer is no, for a variety of reasons.
-                </para>
-
-                <para>
-                    The Linux Kernel (or Mach Kernel for Mac users) buffers input and output to devices. This is good:
-
-                    <itemizedlist mark='bullet'>
-                        <listitem><para>It means we can write to devices faster (up to a point).</para></listitem>
-                        <listitem><para>Reading data can also be faster if we've already read that bit of data since booting.</para></listitem>
-                    </itemizedlist>
-
-                    Basically, it makes our devices seem faster. When you read from a device file like "/dev/sda", the kernel manages all the reads through its buffer. The problem is that the buffer holds data in sections, of, say, 4 KB. This is normally fine, but if you can only read 3KB from a damaged disk before getting an error, you won't get ANY of that data from the kernel, because it can't fill the buffer.
-                </para>
-
-                <para>
-                    Direct disk access solves this by bypassing the kernel's buffer entirely. Note that it can make recoveries slower, but you normally want to leave it enabled anyway.
-                </para>
-            </section>
-
-            <section>
-                <title>Reading backwards</title>
-                <para>
-                    GNU ddrescue will normally start by reading from the start of the drive to the end of the drive ("forwards"). After that, it does several forwards and backwards passes to get as much data as possible.
-                </para>
-
-                <para>
-                    However, it is possible to start by reading from the end of the disk to the start ("backwards"). Using this option also reverses all of the other passes. Reading backwards is often slower, but if you have a lot of bad sectors at the start of your drive, this might help you.
-                </para>
-            </section>
-
-            <section>
-                <title>Preallocating disk space</title>
-                <para>
-                    <note>
-                        <para>
-                            This feature is only available on Linux.
-                        </para>
-                    </note>
-
-                    This is only really meaningful if you're using an image file. Say, you're recovering an 8GB USB drive. What it will do is make an 8GB disk image and then fill it with data, rather than expanding the disk image as new data arrives. This is useful if you're not sure you have enough disk space for the data. It's also possible it might speed the recovery up.
-                </para>
-            </section>
-
-            <section>
-                <title>Soft run</title>
-                <para>
-                    As the name suggests, this option will skip over bad sectors. This option can be helpful if you want to make a really quick first pass before trying the difficult parts of the disk in some situations. Normally, it's not very helpful though, as all it does is disable the last phase, "Retrying bad sectors".
-                </para>
-            </section>
-
-            <section>
-                <title>Overwrite output file</title>
-                <para>
-                    You need to enable this option if you're doing a device to device recovery, rather than recovering to an image file. This is just a safety feature.
-
-                    <tip>
-                        <para>
-                            DDRescue-GUI will automatically set this option for you when it is needed. If it's set wrong by the GUI you can override it though.
-                        </para>
-                    </tip>
-                </para>
-            </section>
-
-            <section>
-                <title>Number of times to retry bad sectors</title>
-                <para>
-                    When it's finished getting all of the good data off of the drive, GNU ddrescue will retry all of the bad sectors it's found. You can use this option to skip this step, or run it as many times as you want. Values range from 0 - 5, and then forever. The default of 2 is normally fine.
-                </para>
-            </section>
-
-            <section>
-                <title>Maximum number of errors before exiting</title>
-                <para>
-                    You can tell ddrescue to exit after it's encountered a certain number of bad areas on the drive. This could be useful if you're just reading through the drive to see if there are any bad sectors, or if you're impatient and want to try different settings when the threshold is reached. Values range from infinite, and 1000 - 10. You normally just want to leave this as it is (infinite).
-                </para>
-            </section>
-
-            <section>
-                <title>Number of clusters to copy at a time</title>
-                <para>
-                    On the first pass, you can set how many clusters you want ddrescue to copy at a time. It's ignored on later passes, but it can make the recovery a lot faster or slower, depending on how you set it, and what kind of disk you're recovering from.
-                </para>
-
-                <para>
-                    Values range from 32 - 256. Mostly, the default of 128 is fine, but if you find it to be slow, you can adjust it. Bigger values are often faster.
-                </para>
-            </section>
-
-        </section>
-        <section>
-            <title>Device-Device recoveries</title>
-            <para>
-                Device to device recoveries are a little bit more difficult than device to file recoveries. The main process is the same, but:
-
-                <warning>
-                    <para>
-                        You must be *absolutely* sure that the device you're recovering to is really the device you intend to recover to!
-                    </para>
-                </warning>
-
-                Sadly, it often happens that people make a mistake at this point, and overwrite important data. Make sure that you use the Disk Information Window to double and triple check that the device you're recovering to is the right one. Do NOT continue until you're absolutely sure.
-            </para>
-
-            <para>
-                If you need to select a device that DDRescue-GUI hasn't detected, you can select your own destination like this on Linux:
-                <figure>
-                    <title>Manually selecting an output device (Linux-only)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-output-specify-option-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <note>
-                    <para>
-                        On Macs, you can't yet select devices not shown in the list because they are hidden from you by macOS. In a future release of DDRescue-GUI, I will probably provide a workaround for this.
-                    </para>
-                </note>
-
-                Continue, and navigate to /dev.
-
-                <figure>
-                    <title>Navigating to /dev on Linux</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='navigating-to-dev-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-   
-                <note>
-                    <para>
-                        You may need to select "Show All Files/Devices" in the corner of the file dialog to find what you're looking for.
-                    </para>
-                </note>
-
-                If you do select a device or an existing file as your destination, the GUI will warn you like this:
-
-                <figure>
-                    <title>Confirming your destination (Linux)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-output-file-warning-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                <figure>
-                    <title>Confirming your destination (Mac)</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                            fileref='ddrescuegui-output-file-warning-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                        </imageobject>
-                    </mediaobject>
-                </figure>
-
-                After this point, follow the instructions as usual, making sure the "Overwrite output file/disk" option is left enabled. This leads us quite nicely on to the next topic.
-            </para>
-        </section>
-
-        <section>
-            <title>Recovering individual files with DDRescue-GUI</title>
-            <para>
-                Seeing as you can recover from device files, it stands to reason that you can recover individual files as well. Just select them under the source option, and create a new file under the destination, and all should be fine. Again, you may need to select "View All Files/Devices" in the file dialog to see most files. This might be difficult to do on Macs.
-
-                <important>
-                    <para>
-                        Make sure that you haven't got "Direct Disk Access" checked in the settings window, as it may cause strange behaviour.
-                    </para>
-                </important>
-
-                <note>
-                    <para>
-                        If you're wondering why this is helpful, it might be if you've only got a few files you care about on a failing drive, and you've checked that you can't read/copy them the normal way. This should work especially well if they're large files.
-                    </para>
-                </note>
-            </para>
-        </section>
-
-        <section xml:id="mountingoutputfiles">
-            <title>Mounting Output Files</title>
-            <para>
-                This is one of the most helpful features of DDRescue-GUI, especially to people who are new to data recovery or are not technically-minded. It allows you to view all the data you recovered easily. The procedure is a bit different depending on whether you recovered a partition or a device, but it is very similar.
-            </para>
-
-            <section>
-                <title>When recovering from an entire device</title>
-                <para>
-                    When your recovery is finished, click "Mount Image/Disk".
-
-                    <figure>
-                        <title>The mount button (Linux)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-mountbutton-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    <figure>
-                        <title>The mount button (Mac)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-mountbutton-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    You will be presented with a window that looks like this:
-
-                    <figure>
-                        <title>Selecting a partition (Linux)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='ddrescuegui-select-partition-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    <figure>
-                        <title>Selecting a partition (Mac)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='ddrescuegui-select-partition-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    The information here is like the Disk Information Window, but more basic. Select a partition you want to mount, and click okay. After a few seconds, you should see this:
-
-                    <figure>
-                        <title>Successfully mounting a partition in your device (Linux)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-devicemounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    <figure>
-                        <title>Successfully mounting a partition in your device (Mac)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-devicemounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    <tip>
-                        <para>
-                            Don't worry if you select the wrong partition; you can just try again. Often, there will be a few partitions that are unmountable. These don't hold any meaningful data, so don't worry about it, just pick a different partition and try again until you find your data.
-                        </para>
-                    </tip>
-
-                    And simply navigate to where your files are, and view or copy as desired. When you're finished, cluck "Unmount", and you'll be returned to the previous window.
-                </para>
-            </section>
-
-            <section>
-                <title>When recovering from a partition</title>
-                <para>
-                    This is a bit simpler; just click "Mount Image-Disk", and it'll do it for you. After a few seconds, you'll see:
-
-                    <figure>
-                        <title>Successfully mounting your partition (Linux)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-partitionmounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    <figure>
-                        <title>Successfully mounting your partition (Mac)</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                fileref='finished-partitionmounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure>
-
-                    And then navigate to where your files are. When you're finished, click "Unmount", and you'll be returned to the previous window.
-                </para>
-            </section>
         </section>
     </chapter>
 
@@ -1015,95 +515,6 @@ Free Documentation License".
                         <para>No, but I might add support in a future release if there's demand.</para>
                     </answer>
                 </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Why do I need to use a mapfile?</para>
-                    </question>
-                    <answer>
-                        <para>There's are lots of reasons, and it really is very important. See <xref linkend="whyuseamapfile"/>.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>What is "Direct Disk Access"?</para>
-                    </question>
-                    <answer>
-                        <para>Mostly, you should just leave this on, because it usually makes it easier to read damaged drives and helps you recover more data. If you want to know how it works, see <xref linkend="aboutdirectdiskaccess"/>.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Why is the read backwards option helpful?</para>
-                    </question>
-                    <answer>
-                        <para>If the very start of your disk is difficult to read, it may enable you to get most of the data more quickly. If you think your drive is about to stop working completely, this could help you a lot.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Can I recover to optical (CD/DVD/Bluray) drives?</para>
-                    </question>
-                    <answer>
-                        <para>Unfortunately, no. This would be difficult to implement, and also writing to these drives is slow; if you think your source drive might be about to die, the last thing you want is to hold it up writing an optical disk.
-                        </para>
-                        <para>
-                            You could recover to an image file, then use tools to split that file into CD/DVD sized chunks and write them, but that may not be helpful anyway; sometimes you need to repair filesystems and so on before you can read data. Reading disks like that would be difficult as well, and more suitable for a backup program to do.
-                        </para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Can I run more than one instance of DDRescue-GUI at once?</para>
-                    </question>
-                    <answer>
-                        <para>At the time of writing, no. While there's nothing stopping you from doing this, the GUI's log file would be open twice, and would probably corrupt. So, you probably CAN do it, but I haven't tested that scenario, and your GUI logfile would probably be corrupted and unusable if anything went wrong. Note that the recovery map file would probably be fine though.</para>
-
-                        <para>Note that I might add support for this in a future release.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Can I restart DDRescue-GUI after aborting my recovery?</para>
-                    </question>
-                    <answer>
-                        <para>Absolutely, but only if you used a map file. Just make sure you have exactly the same input, output, and map file settings, and you should be good to go. You can safely change the settings in Settings Window, which allows you to try different approaches to get your data more quickly.
-                        </para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>What preset/settings should I use?</para>
-                    </question>
-                    <answer>
-                        <para>See <xref linkend="settingupforrecovery"/> for the basics. If you want more details, have a look at <xref linkend="advancedsettings"/>.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>MacOS: Where are the /dev/rdisk* devices?</para>
-                    </question>
-                    <answer>
-                        <para>They are intentionally hidden. If you want to use direct disk access, pick your device the usual way, and tick "Use Direct Disk Access" in the settings window.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Can I use a domain mapfile to speed my recovery up with DDRescue-GUI?</para>
-                    </question>
-                    <answer>
-                        <para>At the time of writing, you can't. This is because DDRescue-GUI supports old versions of ddrescue that don't have that feature, and the process of making a domain mapfile is different for different filesystems; it would probably become complicated, and it would be hard to make a simple interface for this.</para>
-
-                        <para>Nevertheless, I might implement this in a future release if there is demand for it.</para>
-                    </answer>
-                </qandaentry> 
-                <qandaentry>
-                    <question>
-                        <para>Can I use DDRescue-GUI to recover from encrypted volumes?</para>
-                    </question>
-                    <answer>
-                        <para>Possibly. On Linux, LUKS encryption doesn't work with DDRescue-GUI at the moment, but other encryption methods may work, but I haven't tested the GUI with them. The same goes for MacOS encryption, so your mileage may vary; it may work, but is untested at the time of writing.</para>
-                    </answer>
-                </qandaentry>
             </qandaset>
         </section>
 
@@ -1117,16 +528,6 @@ Free Documentation License".
                     <answer>
                         <para>My algorithm for calculating this is very simple, so if you have a large bad area of a disk, and then lots of easily-readable data, the time estimate might take a while to adjust. New versions of GNU ddrescue have a better estimate, so you can show terminal output to see that if you like. If you can't see it, you'll just have to make do with the GUI's estimate, which I may improve in the future.
                         </para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Recovery is very slow, why?</para>
-                    </question>
-                    <answer>
-                        <para>This is quite normal, sadly. It's much harder to read damaged disks than good ones, so transfer rates can be only a few KB/s or worse. You can try different settings in the settings window to see if that improves the situation.</para>
-
-                        <para>Note that on certain types of drive with flash memory, like USB sticks and SD cards, using the "Best Recovery" preset can slow you down. Instead try "Balanced", or try turning direct disk access off.</para>
                     </answer>
                 </qandaentry>
             </qandaset>
@@ -1145,38 +546,6 @@ Free Documentation License".
                         <para>However, you may find that you can't mount your output file. This is especially likely to happen if you couldn't get all the data off your source drive, but don't worry! You can use tools like photorec and testdisk to recover your files from the output file/device, and you'll probably get a lot of them back still.</para>
                     </answer>
                 </qandaentry>
-                <qandaentry xml:id="cantmountoutputfile" xreflabel="Why can't I mount my output file?">
-                    <question>
-                        <para>Why can't I mount my output file?</para>
-                    </question>
-                    <answer>
-                        <para>It could be because you didn't recover enough data from your source drive, the data is damaged, or that your operating system doesn't understand the filesystem. On MacOS, you probably won't be able to read Linux-style partitions, and on Linux you may struggle to read exFAT, and HFS+ partitions depending on your setup.</para>
-
-                        <para>Don't panic if this happens to you. If there's more data to recover, try doing that first. If it still doesn't work, make sure the filesystem is supported on your OS, and then in turn try using testdisk, photorec or similar tools to read the output file/device.</para>
-
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>Can I restart DDRescue-GUI and try again?</para>
-                    </question>
-                    <answer>
-                        <para>
-                            Yes, but only if you have a map file. Just make sure you use the same options on the main window. Restarting with different settings often allows you to pull more data off your drive. This work especially if it's say, a CD, and you have multiple CD drives you can try to read it with. In that case, you may need to change the input device, but make sure you get it right, and use the Disk Info window to help you.
-                        </para>
-                    </answer>
-                </qandaentry>
-
-                <qandaentry>
-                    <question>
-                        <para>How can I mount my output file/disk after closing DDRescue-GUI?</para>
-                    </question>
-                    <answer>
-                        <para>If you are recovering to a disk, just use your operating system's tools like you would with, for example, a USB drive.</para>
-
-                        <para>If you are recovering to a file, the situation is somewhat different. It's easier to just start the recovery again with the same settings and abort immediately. In future, I will make this easier to do.</para>
-                   </answer>
-                </qandaentry>
             </qandaset>
         </section>
 
@@ -1189,52 +558,6 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>First, make sure you're running the newest version of DDRescue-GUI. If you still have the error, you may be using a newer version of ddrescue than I support, in which case please try to downgrade. If you can't downgrade, you may be able to use the GUI anyway. Alternatively, if your ddrescue version is too old, the GUI will most likely not work for you, unless you can upgrade.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>MacOS: The GUI doesn't start.</para>
-                    </question>
-                    <answer>
-                        <para>Please make sure you're using a supported version of MacOS. I support versions from 10.9 (Mavericks) onwards, and I test with the betas for the new versions of macOS before they come out. If you need support for an older release like 10.6, 10.7 or 10.8, try DDRescue-GUI version 1.6.1 or 1.6. Note that these older versions look slightly different, and have fewer features, so the screenshots in the guide may be slightly wrong for you. There is absolutely no support for versions of MacOS prior to 10.6, or for PowerPC Macs.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>It's taking a long time "Getting new Disk Information" when I open the GUI, why?</para>
-                    </question>
-                    <answer>
-                        <para>This is normal if you have a lot of disks, or an older computer. If you think the GUI has crashed, try rebooting your computer and starting DDRescue-GUI again.</para>
-
-                        <para>If you're still having trouble, you may have disks the GUI doesn't support, so remove any external disks and try again. Note that encrypted disks are not supported and may cause problems.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>The information/formatting is wrong on the GUI</para>
-                    </question>
-                    <answer>
-                        <para>Linux Users: Please check that you're using a supported version of ddrescue. You can check in the About window. If you don't have a supported version of GNU ddrescue, you will see a warning when you start the GUI.</para>
-
-                        <para>Mac Users: Check that you're using a supported version of MacOS (10.9 or higher). If you are, please report this bug to me by contacting me at <link xlink:href="http://www.launchpad.net/~hamishmb">www.launchpad.net/~hamishmb</link>.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>The GUI crashed while recovering data! Help!</para>
-                    </question>
-                    <answer>
-                        <para>It's very unlikely that this would happen, but nevertheless:</para>
-
-                        <para>Don't panic. Your data is almost definitely fine. Reboot your computer, select all the same settings, and try again. Note that this issue is more likely to happen if you're using an unsupported version of ddrescue.</para>
-                    </answer>
-                </qandaentry>
-                <qandaentry>
-                    <question>
-                        <para>I can't mount my output file!</para>
-                    </question>
-                    <answer>
-                        <para>See <xref linkend="cantmountoutputfile"/>.</para>
                     </answer>
                 </qandaentry>
             </qandaset>
