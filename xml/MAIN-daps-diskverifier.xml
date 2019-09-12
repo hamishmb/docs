@@ -238,11 +238,11 @@ Free Documentation License".
     </chapter>
 
     <chapter xml:id="concepts">
-        <title>Data Recovery Concepts</title>
+        <title>Disk Drive Concepts</title>
         <info>
             <abstract>
                 <para>
-	                In order to be able to use any data recovery tools, you need to understand some of the concepts behind data recovery. This chapter will explain the basics, and it will also show you how to get help when you're using the GUI. You can safely skip this chapter if you already understand the concepts, because I've gone into fairly basic detail here.
+	                In order to make best use of this tool, you need to understand some of the concepts behind disk drives, and securely erasing disks. This chapter will explain the basics, and it will also show you how to get help when you're using the GUI. You can safely skip this chapter if you already understand the concepts, because I've gone into fairly basic detail here.
                 </para>
             </abstract>
         </info>
@@ -261,75 +261,93 @@ Free Documentation License".
         </section>
 
         <section>
-            <title>Partitions and File Systems</title>
-            <para>
-                Okay. Device names can be a bit confusing, but it'll start to make more sense soon. A partition is, literally, just a section of a hard drive or other device. Usually, you only need partitions on hard drives, and other devices like DVDs often don't have them at all. You can have many partitions on one drive, often up to 4, but sometimes many more than that.
-            </para>
-            <para>
-                Right, so we have devices and partitions, but to actually store data, the partitions need a file system. This organises the files and keeps track of where they are and how large they are. A file system is what you see in Windows as, say, C:, or E:. Remember that some devices like DVDs don't need partitions, and the device has the filesystem itself.
-            </para>
-        </section>
-
-        <section>
-            <title>"Mounting" and "Unmounting" Devices</title>
-            <para>
-                You might have heard these terms before if you use Linux or macOS. If you have a partition with a file system, you need to "mount" it to make it usable. You could think of it like opening a book, I guess: All the information is there in the book, but you need to open it before you can read it. In Windows, mounted devices get drive letters like C:. In Linux and macOS, mounted devices are given a folder where they can be accessed, like "/media/data", for example. When you're finished with a drive, you should unmount it, which is usually done when you shut down your computer.
-            </para>
-        </section>
-
-        <section>
-            <title>Bad Sectors</title>
-            <para>
-                A sector is a very small area of a disk. The exact size can very, but nevertheless, it's very small. When a sector becomes unreadable, it is called a bad sector. Bad sectors can happen because of corrosion, scratches, shock damage and so on.
-            </para>
-        </section>
-
-        <section>
-            <title>Data Corruption</title>
-            <para>
-                This often happens because of bad sectors, but can also be due to power loss while writing data and many other things. Basically, it's data that can be read, but it isn't completely intact so it might not be meaningful or usable. If the sector is damaged the data may have been corrupted or misread. If you're unlucky, you may find this happened to you. In that case, you'll likely need to use some more tools to fix your output file from DDRescue-GUI before you can use it.
-            </para>
-        </section>
-
-        <section>
             <title>"Disk"</title>
             <para>
-                This is quite a vague term that can mean a lot of things. In this user guide, and in the program, a disk is a partition or device that contains a file system.
+                This is quite a vague term that can mean a lot of things. In this user guide, and in the program, a disk is a device that you want to securely erase and/or verify.
             </para>
         </section>
 
         <section>
-            <title>Formatting</title>
+            <title>HDD</title>
             <para>
-                If you format a disk, you are giving it a file system. This can also mean erasing the previous filesystem and everything it contains. If you say a disk is formatted as FAT32, it means the disk has a FAT32 filesystem on it. Often when a disk is formatted, the data on it isn't actually overwritten, and it can sometimes be recovered. The same goes for deletion.
+                Short for Hard Disk Drive. These are the rotating magnetic drives that have been in common use for many years.
             </para>
         </section>
 
         <section>
-            <title>Deleting and Undeleting</title>
+            <title>SSD</title>
             <para>
-                You almost certainly know what deleting is. What you might not know, though, is that when you delete a file it isn't actually "gone" most of the time. Often, the reference that tells your computer the file exists is deleted, and the space the file was using is marked as free, but the actual file is still there, until it gets overwritten by something else later.
-            </para>
-
-            <para>
-                Because the files aren't often overwritten until later, if a file was deleted recently, it can often be "undeleted". This is where a special program reads through all the empty space on your disk and looks for file fragments that haven't been overwritten yet. You can often recover a surprising amount of data by doing this.
-            </para>
-
-            <para>
-                NOTE: GNU ddrescue and DDRescue-GUI aren't undelete tools, but you can often use them alongside undelete tools to get more data back.
+                Short for Solid State Drive. These are the new flash-based storage media that have been gaining popularity rapidly over the last several years. There are no moving parts in these drives.
             </para>
         </section>
 
         <section>
-            <title>Image Files</title>
+            <title>ATA</title>
             <para>
-                These hold a filesystem, much like a partition. This is a weird concept, but if you think about it, if everything in macOS and Linux is represented as a file, including partitions, it makes sense that a file can hold all the data from a partition or device. Image files are usually created by literally copying the file that represents a partition or a disk. Image files can have partitions inside too, just like a hard drive.
+                Short for Advanced Technology Attachment. Also known as PATA, IDE, ATAPI, EIDE, and similar. This is the name for the interface that older HDDs and optical drives used, with the ribbon cables. TODO picture
             </para>
+        </section>
 
+        <section>
+            <title>SATA</title>
             <para>
-                You might be wondering why these are helpful. Often they're used for backups, but also for data recovery. You can recover data from a bad DVD, say, and save the data into a file. This is good, because often after doing a recovery, some of the data you got turns out to be corrupted, and it needs to be analysed with another tool. It's much easier to do this if you recover to a file.
+                An improvement over IDE/ATA that is faster and uses slim cables. This is the most common, but older standard, used for HDDs and slower SSDs. TODO picture
             </para>
+        </section>
 
+        <section>
+            <title>NVME</title>
+            <para>
+                A new, very fast protocol used by faster SSDs to get the highest speed possible. These newer drives usually connect using a PCI Express or M.2 connector. TODO picture
+            </para>
+        </section>
+
+        <note>
+            <para>
+                There are also other drive and connector standards, such as SAS. These are also supported by Disk Verifier, but not mentioned much in this user guide because they are less common and don't affect the way that Disk Verifier works.
+            </para>            
+        </note>
+
+        <section>
+            <title>ATA/SATA Secure Erase Command</title>
+            <para>
+                This is a special ATA/SATA command sent to a drive to tell it to erase itself securely. There are other ways of erasing media as well, such as deaguassing, and using the OS to write zeros or random data to it, but this is the preferred method, because it also erases reserved areas of the disk that the OS cannot access.
+            </para>
+            <para>
+                More information on the ATA secure erase command can be found at <link xlink:href="https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase">https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase</link>
+            </para>
+        </section>
+
+        <section>
+            <title>NVME Secure Erase Command</title>
+            <para>
+                This is much the same, but it is used for NVME SSDs that connect through the faster M.2 or PCI Express connectors, rather than through SATA or ATA.
+            </para>
+        </section>
+
+        <section>
+            <title>"Secure Erase" vs "Enhanced Secure Erase"</title>
+            <para>
+                A standard Secure Erase overwrites all the data on the disk with zeros. On SSDs, the process is different, and often much faster, but the end result is the same. This is the standard option provided with most drives.
+            </para>
+            <para>
+                Enhanced Secure Erase is provided on some newer or more specialist drives. It writes predetermined patterns on to the disk, usually multiple times. As a result of this, it takes a lot longer to perform. It is much harder to verify the disk has been wiped in this case, because the patterns are manufacturer-specific.
+            </para>
+            <warning>
+                <para>
+                    As a result of the Enhanced Secure Erase writing patterns to the disk, you need to use the standard Secure Erase feature in order to be able to verify the disk with Disk Verifier.
+                </para>
+            </warning>
+        </section>
+
+        <section>
+            <title>NIST 800-88</title>
+            <para>
+                The NIST 800-88 specification is a set of guidelines for sanitizing media. The specification is long and complicated, but part of the specification states that at least 10% of the media should be verified. This is the default percentage to verify, but of course, if you want to be abolutely sure, you should verify 100% of the disk.
+            </para>
+            <para>
+                The full NIST 800-88 specification can be found at <link xlink:href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf</link>
+            </para>
         </section>
 
         <section>
