@@ -550,7 +550,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_disk_selection.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -570,7 +570,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_disk_confirmation.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -582,7 +582,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_erasing.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -594,12 +594,40 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Hopefully, your verification will complete successfully, and you'll get a green mark:
+
+                <warning>
+                    <para>
+                        If you instead get a red mark, it indicates that verification has failed. This may mean that your disk is damaged and couldn't be erased. Attempt to erase it again, and try again.
+                    </para>
+                </warning>
+
+                <figure>
+                    <title>Disk Verifier success on Parted Magic</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_diskverifier_success.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
 
                 Once finished, you'll be presented with this window, so you can save the logs if you wish.
+
+                <figure>
+                    <title>Parted Magic Secure Erase and Disk Verifier Logs</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_logs.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
             </para>
         </section>
     </chapter>
