@@ -453,7 +453,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -474,7 +474,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='pmagic_installing_diskverifier.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -487,12 +487,119 @@ Free Documentation License".
                     </para>
                 </warning>
             </para>
+            <para>
+                Eventually, Parted Magic should boot to this screen:
+
+                <figure>
+                    <title>Parted Magic desktop</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_desktop.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Simply enter your timezone, and you're ready to begin erasing and verifying disks.
+            </para>
         </section>
 
         <section xml:id="usingsecureerasegui">
             <title>Using the Secure Erase GUI</title>
             <para>
+                Now you need to open the Secure Erase GUI from the desktop:
 
+                <figure>
+                    <title>Parted Magic Secure Erase GUI shortcut</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_desktop_highlighted_secureerasegui.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                And select the secure erase option:
+
+                <figure>
+                    <title>Parted Magic SATA Secure Erase option</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_sata_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Alternatively, select this option for NVME drives:
+
+                <figure>
+                    <title>Parted Magic NVME Secure Erase option</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='pmagic_nvme_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Next, the Secure Erase GUI will present you with a list of disks you can erase:
+
+                <figure>
+                    <title>Parted Magic Secure Erase disk selection</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Simply tick the "Disk Verifier" option, and specify the disks you want to verify, and the percentage of the disk you want to verify (defaults to 100%), and click continue.
+
+                <tip>
+                    <para>
+                        You can deselect the "Auto Start" and "Auto Close" options if you wish, but this just means Disk Verifier will wait for you to start the verification for all drives, and will wait for you to close it when the verification is done.
+                    </para>
+                </tip>
+
+                After this, you'll see a confirmation dialog:
+
+                <figure>
+                    <title>Parted Magic Secure Erase confirmation</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                After ticking the tick box at the bottom, you can click "Start Erase" to begin erasing the disk(s). This can take anything from a few seconds for new SSDs, to hours or even days for larger HDDs. As you can see from the screenshot, my disk takes around 80 minutes.
+
+                <figure>
+                    <title>Parted Magic Secure Erase in action</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Once erasing is complete, the window will disappear, and Disk Verifier will open. Depending on the options you picked, Disk Verifier will now usually begin verifying the disk(s). This may take a while depending on the size and speed of your disk(s).
+
+                <figure>
+                    <title>Disk Verifier running on Parted Magic</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata
+                            fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+
+                Once finished, you'll be presented with this window, so you can save the logs if you wish.
             </para>
         </section>
     </chapter>
@@ -578,6 +685,14 @@ Free Documentation License".
                         <para>Make sure you verify at least 10% of the disk(s). I recommend verifying 100%, just to be absolutely sure.</para>
                     </answer>
                 </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>How do I add a pre-erased disk on Parted Magic?</para>
+                    </question>
+                    <answer>
+                        <para>You can't - you need to buy the live disk to verify pre-erased disks.</para>
+                    </answer>
+                </qandaentry>
             </qandaset>
         </section>
 
@@ -604,6 +719,42 @@ Free Documentation License".
                     <answer>
                         <para>
                             This indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions at <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why isn't my disk appearing in the Secure Erase GUI?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            This can happen for a number of reasons.
+                        </para>
+                        <para>
+                            The most likely reason is you selected the wrong option when you opened the Secure Erase GUI. You may need the SATA option instead of the NVME option or vice versa.
+                        </para>
+                        <para>
+                            Failing that, it's most likely that your disk doesn't support the secure erase feature, and you'll have to use another method to erase your disk.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why is my disk coming up as "unsupported" in the Secure Erase GUI?</para>
+                    </question>
+                    <answer>
+                        <para>
+                            Your disk may be locked. Microsoft Windows sometimes locks SSDs and prevents them from being secure erased. Fortunately, I recently wrote another GUI that comes with Parted Magic that helps fix this problem. Simply open "PSID Unlocker GUI" from the Secure Erase GUI to unlock your SSD using the physical ID printed on its case:
+
+                            <figure>
+                                <title>Parted Magic Secure Erase PSID GUI option</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata
+                                        fileref='pmagic_secure_erase_psid_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
                         </para>
                     </answer>
                 </qandaentry>
