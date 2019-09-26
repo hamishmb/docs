@@ -201,7 +201,7 @@ Free Documentation License".
             </para>
 
             <para>
-                The Parted Magic module will run on any system that is capable of running Parted Magic.
+                The Parted Magic module will run on any system that is capable of running Parted Magic. Parted Magic will run on almost any system, new and old, and it has very low system requirements.
                 
             </para>
 
@@ -256,10 +256,7 @@ Free Documentation License".
                 Device names are a bit of a weird concept to a lot of people, particularly those who use Windows, where drive letters are used instead, like C:, D: and so on. On Linux, however, devices (like hard drives, USB drives, DVD drives) have names. These names are used to access the drives, so for example, to read directly from the DVD drive, you might read from a device called "/dev/sr0", which you can think of as being similar to the D: drive in Windows.
             </para>
             <para>
-                Linux tends to use different names for devices. It's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. If you're finding this confusing, don't worry, because I will explain it more clearly later along with some of the other concepts. It's quite complicated.
-            </para>
-            <para>
-                Now for the really confusing bit. While you CAN read directly from these devices, you won't be able to understand what you're reading. This is where it becomes different from Windows. On Linux, pretty much everything is accessed as a file, including devices. So, essentially, when you read from, say, "/dev/disk0", you're actually reading data directly from the hard drive as if it were a file. In order to be able to use the drive in any meaningful way, it needs to have partitions and filesystems.
+                Linux tends to use different names for devices. It's quite common to have names like "/dev/sda" (first hard drive), "/dev/sdb" (second hard drive), and "/dev/sr0" (first optical drive). You might also see names like "/dev/sda1", which represents the first partition on the first hard drive. If you're finding this confusing, don't worry: a thorough understanding of these names is not required to use the GUI.
             </para>
         </section>
 
@@ -311,9 +308,19 @@ Free Documentation License".
         </section>
 
         <section>
+            <title>Hexadecimal numbers</title>
+            <para>
+                These are numbers that are in base 16, instead of our usual base 10. The letters A-F are used for the final 6 characters. These are commonly used in computing because one byte can represent exactly two hexadecimal characters - it is a very convenient way of displaying binary data.
+            </para>
+
+            <para>
+               In order to understand how to use the patterns, you should know that if a disk's data consists entirely of 0s - that is, bits that are 0 instead of 1 - the hexadecimal pattern will be "00" for each byte. Likewise, if the disk has only 1s on it, the hex pattern will be "FF" for each byte. Generally, you can leave this setting as it is ("00"), because usually disks are wiped by writing 0s to them.
+            </para>
+        </section>
+        <section>
             <title>ATA/SATA Secure Erase Command</title>
             <para>
-                This is a special ATA/SATA command sent to a drive to tell it to erase itself securely. There are other ways of erasing media as well, such as deaguassing, and using the OS to write zeros or random data to it, but this is the preferred method, because it also erases reserved areas of the disk that the OS cannot access.
+                This is a special ATA/SATA command sent to a drive to tell it to erase itself securely. There are other ways of erasing media as well, such as degaussing, and using the OS to write zeros or random data to it, but this is the preferred method, because it also erases reserved areas of the disk that the OS cannot access.
             </para>
             <para>
                 More information on the ATA secure erase command can be found at <link xlink:href="https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase">https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase</link>
@@ -337,7 +344,7 @@ Free Documentation License".
             </para>
             <warning>
                 <para>
-                    As a result of the Enhanced Secure Erase writing patterns to the disk, you need to use the standard Secure Erase feature in order to be able to verify the disk with Disk Verifier.
+                    As a result of the Enhanced Secure Erase writing manufacturer-dependent patterns to the disk, you need to use the standard Secure Erase feature in order to be able to verify the disk with Disk Verifier.
                 </para>
             </warning>
         </section>
@@ -345,7 +352,7 @@ Free Documentation License".
         <section>
             <title>NIST 800-88</title>
             <para>
-                The NIST 800-88 specification is a set of guidelines for sanitizing media. The specification is long and complicated, but part of the specification states that at least 10% of the media should be verified. This is the default percentage to verify, but of course, if you want to be abolutely sure, you should verify 100% of the disk.
+                The NIST 800-88 specification is a set of guidelines for sanitizing media. The specification is long and complicated, but part of the specification states that at least 10% of the media should be verified. This is the default percentage to verify, but of course, if you want to be absolutely sure, you should verify 100% of the disk. I recommend always verifying 100% of the disk unless you have a very good reason not to do this.
             </para>
             <para>
                 The full NIST 800-88 specification can be found at <link xlink:href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf</link>
@@ -372,7 +379,7 @@ Free Documentation License".
                 This is more complicated if you're booting from a DVD, because it involves remastering the Parted Magic ISO file.
             </para>
             <para>
-                Full instructions for this, complete with a video tutorial, are available <link xlink:href="https://www.hamishmb.com/blog/disk-verifier-parted-magic-tutorial-video-released/">on my blog</link>.
+                Full instructions for this, complete with a tutorial video, are available <link xlink:href="https://www.hamishmb.com/blog/disk-verifier-parted-magic-tutorial-video-released/">on my blog</link>.
             </para>
         </section>
 
@@ -461,7 +468,7 @@ Free Documentation License".
 
                 <warning>
                     <para>
-                        If you don't see this message, or a similar one, it indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
+                        If you don't see this message, or a similar one, it indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the tutorial video.
                     </para>
                 </warning>
             </para>
@@ -478,7 +485,7 @@ Free Documentation License".
                     </mediaobject>
                 </figure>
 
-                Simply enter your timezone, and you're ready to begin erasing and verifying disks.
+                Simply enter your time zone, and you're ready to begin erasing and verifying disks.
             </para>
         </section>
 
@@ -660,12 +667,12 @@ Free Documentation License".
             </figure>
 
             <para>
-                Usually, the "superquiet boot" option will work, and you can just press the enter key, but if not, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
+                Usually, the "super-quiet boot" option will work, and you can just press the enter key, but if not, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
             </para>
 
             <tip>
                 <para>
-                    If you're having trouble getting the live disk to work, you can also try the Failsafe and Diagnostic options to see if they help you. If not, contact me using the methods noted above and I'll be happy to help.
+                    If you're having trouble getting the live disk to work, you can also try the Fail-safe and Diagnostic options to see if they help you. If not, contact me using the methods noted above and I'll be happy to help.
                 </para>
             </tip>
 
@@ -865,7 +872,7 @@ Free Documentation License".
                 </qandaentry>
                 <qandaentry>
                     <question>
-                        <para>Can I run Disk Verifier on my preinstalled Linux Distro?</para>
+                        <para>Can I run Disk Verifier on my pre-installed Linux Distro?</para>
                     </question>
                     <answer>
                         <para>No, as above.</para>
@@ -943,7 +950,7 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>
-                            This can happen for a number of reasons. First try the "Live" option, and then try any of the options in the "Failsafe" menu that seem to apply to your problem.
+                            This can happen for a number of reasons. First try the "Live" option, and then try any of the options in the "Fail-safe" menu that seem to apply to your problem.
                         </para>
                         <para>
                             If you are unable to solve your problem, I would recommend searching and asking on Parted Magic's forums at <link xlink:href="https://partedmagic.com/forums/">https://partedmagic.com/forums/</link>.
@@ -956,7 +963,7 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>
-                            This indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
+                            This indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the tutorial video.
                         </para>
                     </answer>
                 </qandaentry>
@@ -1002,7 +1009,7 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>
-                            You can try the "Failsafe" and "Diagnostic" options, but if they don't help you, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
+                            You can try the "Fail-safe" and "Diagnostic" options, but if they don't help you, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
                         </para>
                     </answer>
                 </qandaentry>
