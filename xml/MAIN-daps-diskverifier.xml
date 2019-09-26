@@ -351,23 +351,6 @@ Free Documentation License".
                 The full NIST 800-88 specification can be found at <link xlink:href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf</link>
             </para>
         </section>
-
-        <section>
-            <title>The Disk Info Window</title>
-            <figure>
-                <title>Disk Verifier's Disk Information Window</title>
-                <mediaobject>
-                    <imageobject>
-                        <imagedata
-                        fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
-                    </imageobject>
-                </mediaobject>
-            </figure>
-
-            <para>
-                A lot of these terms are confusing to people who haven't heard them before. To make it easier to use the GUI, I have included a disk information window. This window shows you device names, but also other information about disks such as size, label, the model, and the description. All of that will help you figure out what device names you want to use, and help prevent data loss.
-            </para>
-        </section>
     </chapter>
 
     <chapter xml:id="pmagicmodule">
