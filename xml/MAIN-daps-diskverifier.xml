@@ -169,7 +169,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='test.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -396,11 +396,11 @@ Free Documentation License".
         <section xml:id="bootingpmagic">
             <title>Booting Parted Magic</title>
             <para>
-                Plug your USB stick in, or insert your optical media, and shut down your computer. Next you need to power it back on while holding a special key. On most keys, you need to press and hold the F12 key, and on Macs you need to press and hold the Option key. This should get you into the boot menu.
+                Plug your USB stick in, or insert your optical media, and shut down your computer. Next you need to power it back on while holding a special key. On most systems, you need to press and hold the either F12, F10, or Delete key, and on Macs you need to press and hold the Option key. This should get you into the boot menu.
             </para>
             <tip>
                 <para>
-                    It can sometimes be difficult to get into the boot menu, depending on your computer. Especially on PCs, you may find you need to tap F12 rapidly.
+                    It can sometimes be difficult to get into the boot menu, depending on your computer. Especially on PCs, you may find you need to tap the key rapidly.
                 </para>
 
                 <para>
@@ -483,7 +483,7 @@ Free Documentation License".
 
                 <warning>
                     <para>
-                        If you don't see this message, or a similar one, it indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions at <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
+                        If you don't see this message, or a similar one, it indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
                     </para>
                 </warning>
             </para>
@@ -632,6 +632,238 @@ Free Documentation License".
         </section>
     </chapter>
 
+    <chapter xml:id="livedisk">
+        <info>
+            <title>Using the Disk Verifier Live Disk</title>
+            <abstract>
+                <para>
+	                This chapter builds on the previous one and shows you how to use the Disk Verifier Live Disk to verify a previously-erased disk.
+                </para>
+            </abstract>
+        </info>
+
+        <section>
+            <title>Preparing the live disk</title>
+            <para>
+                As with preparing the Parted Magic module, this is fairly simple.
+            </para>
+
+            <para>
+                If you're using a CD or DVD to boot the live disk, simply burn it to a disk using your favourite burning program. macOS and Windows both include programs to burn CDs and DVDs, and with Linux I recommend you use K3B, which you can read about <link xlink:href="https://userbase.kde.org/K3b">here</link>.
+            </para>
+
+            <para>
+                If you're using a USB stick to boot the live disk, you can use <link xlink:href="https://unetbootin.github.io/">Unetbootin</link> to do this on any platform. If you're using Windows, you can also use <link xlink:href="https://rufus.ie/">Rufus</link> (use "DD" or "raw" mode), and macOS users can also use Disk Utility.
+            </para>
+
+            <para>
+                This works almost exactly the same way as when we did in <xref linkend="pmagicmoduleprep"/>. For full instructions, read <link xlink:href="https://www.hamishmb.com/blog/disk-verifier-live-disk-tutorial-has-been-released/">my blog post on this</link>.
+            </para>
+        </section>
+
+        <section>
+            <title>Booting the live disk</title>
+            <para>
+                Plug your USB stick in, and access your boot menu the same way as shown in <xref linkend="bootingpmagic"/>.
+            </para>
+
+            <para>
+                Once the live disk has started to boot, you'll be presented with the following boot menu:
+            </para>
+
+            <figure>
+                <title>Disk Verifier Live Disk boot menu</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                Usually, the "superquiet boot" option will work, and you can just press the enter key, but if not, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
+            </para>
+
+            <tip>
+                <para>
+                    If you're having trouble getting the live disk to work, you can also try the Failsafe and Diagnostic options to see if they help you. If not, contact me using the methods noted above and I'll be happy to help.
+                </para>
+            </tip>
+
+            <para>
+                After it starts to boot, you may see some text scrolling, and then eventually you'll see the desktop. The first thing you'll see is likely to be a program called GNOME Disks:
+            </para>
+
+            <figure>
+                <title>GNOME Disks</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_gnome_disks.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                This indicates the live disk booted successfully.
+            </para>
+        </section>
+
+        <section>
+            <title>Using the live disk</title>
+            <para>
+                If you move the mouse to the bottom of the screen, you'll see that a panel pops up:
+            </para>
+
+            <figure>
+                <title>The Panel</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_panel.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                From here, you can access the file manager, and a terminal, as well as shut down the system. You'll also see that Disk Verifier is open in the background. Click the tab to bring Disk Verifier to the foreground.
+            </para>
+
+            <tip>
+                <para>
+                    You can also shut down the system by closing Disk Verifier.
+                </para>
+            </tip>
+
+            <para>
+                You'll now see the Disk Verifier main window:
+            </para>
+
+            <figure>
+                <title>The Main Window</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_diskverifier_main_window.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                It looks very similar to the Parted Magic module, but it has some extra features. The first thing you'll need to do is add a disk by clicking on the button. You'll then be asked to enter the name of the disk:
+            </para>
+
+            <figure>
+                <title>Disk Verifier prompting for disk name</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_diskverifier_disk_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                For the sake of this tutorial, I'm verifying a USB stick, which has now been plugged in. Heading back to GNOME Disks, you can see the new disk, and its name:
+            </para>
+
+            <figure>
+                <title>The new disk showing up in GNOME Disks</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                As you can see in the screenshot, the disk's name is "/dev/sda". Your disk may have a different name, so be sure to check. Now we can enter the name in Disk Verifier's dialog box, and press enter. After a few moments, you'll see the disk show up in Disk Verifier's list:
+            </para>
+
+            <figure>
+                <title>Disk Verifier: new disk added</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_diskverifier_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <tip>
+                <para>
+                    You can use the following instructions to verify multiple disks at the same time. Simply click through them using the list box to view settings and progress for each disk. Each disk needs to be started separately.
+                </para>
+            </tip>
+
+            <para>
+                Now, we need to set the pattern and percentage verification. In my case, the disk has been overwritten with zeros, so the default pattern of "00" is fine.
+
+                <tip>
+                    <para>
+                        You can enter any two-digit hexadecimal pattern in the box, for example "FF".
+                    </para>
+                </tip>
+
+                I want to verify all of the disk, so I'll set the percentage verification to 100%:
+            </para>
+
+            <figure>
+                <title>Disk Verifier: new disk configured</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_diskverifier_disk_configured.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                You may now begin, by clicking the start button. When your disk is finished, it should have a green circle next to it to show that verification was successful:
+            </para>
+
+            <figure>
+                <title>Disk Verifier: verification successful</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_diskverifier_disk_verified.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <warning>
+                <para>
+                    If you get a red dot instead, this indicates that your disk was not verified successfully. Check you specified the right pattern, and then try again. If you're sure you've specified the right pattern, then you may need to erase your disk again.
+                </para>
+
+                <para>
+                    A blue dot indicates that you aborted the recovery.
+                </para>
+            </warning>
+
+            <para>
+                Once all of your disks have been verified, you can shut down the live disk by closing Disk Verifier, or by using the option in the far-right hand side of the panel. Just before shut down, Disk Verifier will prompt you to remove your USB stick or optical media:
+            </para>
+
+            <figure>
+                <title>Live Disk eject prompt</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                        fileref='livedisk_eject_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+
+            <para>
+                I hope this user guide has been useful for you. Hopefully any further questions you have are answered in the FAQs section, but if not, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
+            </para>
+        </section>
+
+    </chapter>
     <chapter xml:id="faqs">
         <info>
             <title>Frequently Asked Questions</title>
@@ -746,7 +978,7 @@ Free Documentation License".
                     </question>
                     <answer>
                         <para>
-                            This indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions at <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
+                            This indicates that the Disk Verifier module has not been installed successfully. Please re-read the instructions in <xref linkend="pmagicmoduleprep"/> and watch the video tutorial.
                         </para>
                     </answer>
                 </qandaentry>
@@ -783,6 +1015,16 @@ Free Documentation License".
                                     </imageobject>
                                 </mediaobject>
                             </figure>
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>The live disk isn't booting on my system!</para>
+                    </question>
+                    <answer>
+                        <para>
+                            You can try the "Failsafe" and "Diagnostic" options, but if they don't help you, you can post on <link xlink:href="https://www.hamishmb.com/forum/">my support forum</link> or <link xlink:href="mailto:hamishmb@live.co.uk">email me</link> and I'll do my best to help.
                         </para>
                     </answer>
                 </qandaentry>
