@@ -284,21 +284,21 @@ Free Documentation License".
         <section>
             <title>ATA</title>
             <para>
-                Short for Advanced Technology Attachment. Also known as PATA, IDE, ATAPI, EIDE, and similar. This is the name for the interface that older HDDs and optical drives used, with the ribbon cables. TODO picture
+                Short for Advanced Technology Attachment. Also known as PATA, IDE, ATAPI, EIDE, and similar. This is the name for the interface that older HDDs and optical drives used, with the ribbon cables.
             </para>
         </section>
 
         <section>
             <title>SATA</title>
             <para>
-                An improvement over IDE/ATA that is faster and uses slim cables. This is the most common, but older standard, used for HDDs and slower SSDs. TODO picture
+                An improvement over IDE/ATA that is faster and uses slim cables. This is the most common, but older standard, used for HDDs and slower SSDs.
             </para>
         </section>
 
         <section>
             <title>NVME</title>
             <para>
-                A new, very fast protocol used by faster SSDs to get the highest speed possible. These newer drives usually connect using a PCI Express or M.2 connector. TODO picture
+                A new, very fast protocol used by faster SSDs to get the highest speed possible. These newer drives usually connect using a PCI Express or M.2 connector.
             </para>
             <note>
                 <para>
@@ -314,7 +314,7 @@ Free Documentation License".
             </para>
 
             <para>
-               In order to understand how to use the patterns, you should know that if a disk's data consists entirely of 0s - that is, bits that are 0 instead of 1 - the hexadecimal pattern will be "00" for each byte. Likewise, if the disk has only 1s on it, the hex pattern will be "FF" for each byte. Generally, you can leave this setting as it is ("00"), because usually disks are wiped by writing 0s to them.
+               In order to understand how to use the patterns, you should know that if a disk's data consists entirely of 0s - that is, bits that are 0 instead of 1 - the hexadecimal pattern will be "00" for each byte. Likewise, if the disk has only 1s on it, the hex pattern will be "FF" for each byte. Generally, you can leave this setting as it is ("00"), because usually disks are erased by writing 0s to them.
             </para>
         </section>
         <section>
