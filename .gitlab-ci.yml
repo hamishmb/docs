@@ -18,10 +18,10 @@ ddrescuegui:
     - daps -d ./DC-daps-ddrescue-gui epub
     - daps -d ./DC-daps-ddrescue-gui pdf
 
+#No scripts for WxFixBoot book yet, as it is still a WIP.
 wxfixboot:
   stage: Doc Generation
   script:
     - daps -d ./DC-daps-wxfixboot html
-    - #No scripts for WxFixBoot book yet, as it's still a WIP.
     - daps -d ./DC-daps-wxfixboot epub
     - daps -d ./DC-daps-wxfixboot pdf
