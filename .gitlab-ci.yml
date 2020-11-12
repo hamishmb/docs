@@ -1,0 +1,27 @@
+default:
+  image: ubuntu:20.04
+  before_script:
+    - apt-get update
+    - apt-get install -y daps epubcheck optipng checkbot lsb-release dvipng imagemagick-6.q16 latexmk libjs-mathjax texlive-fonts-recommended texlive-latex-base texlive-latex-recommended texlive-latex-extra xzdec
+    - lsb_release -a
+    - daps --version
+
+stages:
+    - Doc Generation
+
+ddrescuegui:
+  stage: Doc Generation
+  script:
+    - daps -d ./DC-daps-ddrescue-gui html
+    - ./ddrescue-gui_copy_icons_html.sh
+    - ./ddrescue-gui_set_viewport_html.sh
+    - daps -d ./DC-daps-ddrescue-gui epub
+    - daps -d ./DC-daps-ddrescue-gui pdf
+
+wxfixboot:
+  stage: Doc Generation
+  script:
+    - daps -d ./DC-daps-wxfixboot html
+    - #No scripts for WxFixBoot book yet, as it's still a WIP.
+    - daps -d ./DC-daps-wxfixboot epub
+    - daps -d ./DC-daps-wxfixboot pdf
