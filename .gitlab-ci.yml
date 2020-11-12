@@ -1,6 +1,7 @@
 default:
   image: ubuntu:20.04
   before_script:
+    - ln -snf /usr/share/zoneinfo/Europe/London /etc/localtime && echo Europe/London > /etc/timezone
     - apt-get update
     - apt-get install -y daps epubcheck optipng checkbot lsb-release dvipng imagemagick-6.q16 latexmk libjs-mathjax texlive-fonts-recommended texlive-latex-base texlive-latex-recommended texlive-latex-extra xzdec
     - lsb_release -a
