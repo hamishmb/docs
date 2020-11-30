@@ -482,6 +482,16 @@ Free Documentation License".
                 </tip>
 
                 Finally, you have the "Image Destination", which is where you want to recover your data to. This can be another device, or an image file. It's a good idea to go with an image file like "recovery.img". Put it in a convenient place so you don't lose it, and make sure you have enough disk space first.
+
+                <caution>
+                    <para>
+                        Windows users: Navigate to /cygdrive/c/Users/yourusername to save on your desktop. If you selected one of the folders in the sidebar and can't find your file, you can probably find it under "C:\Program Files\DDRescue-GUI\home" 
+                    </para>
+
+                    <para>
+                        I am aware of this issue and will fix it soon in an update to the Windows version of DDRescue-GUI to make this easier.
+                    </para>
+                </caution>
              </para>
 
             <para>
@@ -964,9 +974,36 @@ Free Documentation License".
 
             <tip>
                 <para>
-                    Mounting output files is not yet supported on Windows.
+                    Mounting output files using DDRescue-GUI is not yet supported on Windows.
                 </para>
             </tip>
+
+            <section>
+                <title>Notes for Windows users</title>
+                <para>
+                    I haven't yet added the ability to mount output files using DDRescue-GUI, but there are a number of options available in the mean time.
+                </para>
+
+                <tip>
+                    <para>
+                        If you are running Windows 8.1 or later, you may not need the below tools as Windows provides some built-in options for mounting disk images.
+                    </para>
+                </tip>
+
+                <section>
+                    <title>CD/DVD Images</title>
+                    <para>
+                        WinCDEmu should provide all the tools you need to do this. It will run on both 32-bit and 64-bit versions of Windows from XP onwards. WinCDEmu is open source software and is available for free at <link xlink:href="https://wincdemu.sysprogs.org/">https://wincdemu.sysprogs.org/</link>
+                    </para>
+                </section>
+
+                <section>
+                    <title>Hard disk/partition images</title>
+                    <para>
+                        OSFMount is another free program that provides a variety of tools to help you mount your disk images. It works on Windows 7 or later (32-bit and 64-bit), and is available from <link xlink:href="https://www.osforensics.com/tools/mount-disk-images.html">https://www.osforensics.com/tools/mount-disk-images.html</link> 
+                    </para>
+                </section>
+            </section>
 
             <section>
                 <title>When recovering from an entire device</title>
