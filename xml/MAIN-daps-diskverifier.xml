@@ -169,7 +169,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -408,7 +408,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pc-boot-menu.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pc_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -420,7 +420,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='mac-boot-menu.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_mac_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                     <caption>
@@ -441,7 +441,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -462,7 +462,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_installing_diskverifier.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_installing_diskverifier.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -483,7 +483,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_desktop.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_desktop.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -502,7 +502,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_desktop_highlighted_secureerasegui.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_desktop_highlighted_secureerasegui.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -514,7 +514,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_sata_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_sata_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -526,7 +526,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_nvme_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_nvme_secure_erase_option.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -538,7 +538,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_disk_selection.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_disk_selection.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -558,7 +558,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_disk_confirmation.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_disk_confirmation.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -570,7 +570,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_erasing.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_erasing.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -582,7 +582,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_diskverifier_in_action.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -600,7 +600,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_diskverifier_success.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_diskverifier_success.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -612,7 +612,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='pmagic_logs.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='diskverifier_pmagic_logs.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -666,7 +666,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_boot_menu.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -690,7 +690,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_gnome_disks.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_gnome_disks.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -711,7 +711,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_panel.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_panel.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -735,7 +735,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_diskverifier_main_window.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_diskverifier_main_window.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -749,7 +749,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_diskverifier_disk_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_diskverifier_disk_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -763,7 +763,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -777,7 +777,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_diskverifier_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_diskverifier_new_disk.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -805,7 +805,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_diskverifier_disk_configured.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_diskverifier_disk_configured.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -819,7 +819,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_diskverifier_disk_verified.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_diskverifier_disk_verified.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -846,7 +846,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='livedisk_eject_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='diskverifier_livedisk_eject_prompt.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -1004,7 +1004,7 @@ Free Documentation License".
                                 <mediaobject>
                                     <imageobject>
                                         <imagedata
-                                        fileref='pmagic_secure_erase_psid_option.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                        fileref='diskverifier_pmagic_secure_erase_psid_option.png' scalefit="1" width="100%" contentdepth="100%"/>
                                     </imageobject>
                                 </mediaobject>
                             </figure>
