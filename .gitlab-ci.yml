@@ -18,3 +18,12 @@ ddrescuegui:
     - ./ddrescue-gui_set_viewport_html.sh
     - daps -d ./DC-daps-ddrescue-gui epub
     - daps -d ./DC-daps-ddrescue-gui pdf
+
+diskverifier:
+  stage: Doc Generation
+  script:
+    - daps -d ./DC-daps-diskverifier html
+    - ./diskverifier_copy_icons_html.sh
+    - ./diskverifier_set_viewport_html.sh
+    - daps -d ./DC-daps-diskverifier epub
+    - daps -d ./DC-daps-diskverifier pdf
