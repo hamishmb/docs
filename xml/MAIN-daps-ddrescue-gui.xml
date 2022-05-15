@@ -166,7 +166,7 @@ Free Documentation License".
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                        fileref='ddrescue.png' scalefit="1" width="100%" contentdepth="100%"/>
+                        fileref='ddrescuegui-ddrescue.png' scalefit="1" width="100%" contentdepth="100%"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -977,7 +977,7 @@ Free Documentation License".
                     <mediaobject>
                         <imageobject>
                             <imagedata
-                            fileref='navigating-to-dev-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                            fileref='ddrescuegui-navigating-to-dev-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                         </imageobject>
                     </mediaobject>
                 </figure>
@@ -1098,7 +1098,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-mountbutton-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-mountbutton-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1108,7 +1108,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-mountbutton-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-mountbutton-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1142,7 +1142,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-devicemounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-devicemounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1152,7 +1152,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-devicemounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-devicemounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1186,7 +1186,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-partitionmounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-partitionmounted-linux.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
@@ -1196,7 +1196,7 @@ Free Documentation License".
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                fileref='finished-partitionmounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
+                                fileref='ddrescuegui-finished-partitionmounted-mac.png' scalefit="1" width="100%" contentdepth="100%"/>
                             </imageobject>
                         </mediaobject>
                     </figure>
