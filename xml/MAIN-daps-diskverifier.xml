@@ -210,7 +210,7 @@ Free Documentation License".
             </para>
 
             <para>
-                The Parted Magic module will run on any system that is capable of running Parted Magic. Parted Magic will run on almost any system, new and old, and it has very low system requirements.
+                The Parted Magic module will run on any system that is capable of running Parted Magic. To see the current system requirements for Parted Magic, visit <link xlink:href="https://www.partedmagic.com">www.partedmagic.com</link>.
                 
             </para>
 
@@ -220,15 +220,15 @@ Free Documentation License".
                 <itemizedlist mark='bullet'>
                     <listitem><para>A 64-bit x86 CPU.</para></listitem>
                     <listitem><para>BIOS (old-style) or EFI/UEFI (new-style) firmware.</para></listitem>
-                    <listitem><para>At least 512 MB of system RAM.</para></listitem>
+                    <listitem><para>At least 1 GB of system RAM.</para></listitem>
                     <listitem><para>A 1GB USB stick or blank CD/DVD to write the software to.</para></listitem>
                 </itemizedlist>
 
-                As always, the faster your system, the faster the software will run.
+                UEFI Secure boot is not supported. As always, the faster your system, the faster the software will run.
 
                 <note>
                     <para>
-                        Most graphics cards, keyboards, and mice are supported, but Mac users may need to use a USB keyboard and mouse depending on the hardware.
+                        Most hardware is supported, however Intel Macbook users with SPI keyboards and touchpads may need to use a USB keyboard and mouse. This issue will be fixed in a future release.
                     </para>
                 </note>
             </para>
@@ -237,7 +237,7 @@ Free Documentation License".
         <section>
             <title>Where can I buy Disk Verifier and Parted Magic?</title>
             <para>
-                Disk Verifier can be purchased from my website at <link xlink:href="https://www.hamishmb.com/html/diskverifier.php">www.hamishmb.com</link>. Parted Magic can be bought from <link xlink:href="https://www.partedmagic.com">www.partedmagic.com</link>
+                Disk Verifier can be purchased from my website at <link xlink:href="https://www.hamishmb.com/html/diskverifier.php">www.hamishmb.com</link>. Parted Magic can be bought from <link xlink:href="https://www.partedmagic.com">www.partedmagic.com</link>.
             </para>
         </section>
                 
