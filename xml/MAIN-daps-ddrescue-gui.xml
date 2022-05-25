@@ -245,8 +245,8 @@ Free Documentation License".
                 Linux Users: You need to be running a modern Linux distribution. More specifically:
 
                 <itemizedlist mark='bullet'>
-                    <listitem><para>Fedora 31 and Higher, and all derivatives/spinoffs.</para></listitem>
-                    <listitem><para>Ubuntu 16.04 and Higher, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Any supported version of Fedora, and all derivatives/spinoffs.</para></listitem>
+                    <listitem><para>Any supported version of Ubuntu, and all derivatives/spinoffs.</para></listitem>
                     <listitem><para>Any recent version of Parted Magic.</para></listitem>
                     <listitem><para>Theoretically, any other similar Linux distributions, like Slackware, Debian and Red Hat Enterprise Linux.</para></listitem>
                 </itemizedlist>
@@ -259,18 +259,23 @@ Free Documentation License".
 
                 <itemizedlist mark='bullet'>
                     <listitem><para>macOS 10.9 (Mavericks) and Higher.</para></listitem>
-                    <listitem><para>A 64-bit Intel CPU, or an Apple Silicon CPU (EXPERIMENTAL)</para></listitem>
+                    <listitem><para>A 64-bit Intel CPU, or an Apple Silicon CPU.</para></listitem>
                     <listitem><para>200MB disk space</para></listitem>
                 </itemizedlist>
 
-                If you really need to run DDRescue-GUI on an older mac, run v1.6.1. This is an old version, and no longer updated, but it will work on:
+                If you need to run DDRescue-GUI on an older intel mac, use the legacy intel mac version:
 
                 <itemizedlist mark='bullet'>
-                    <listitem><para>macOS 10.6 (Snow Leopard) and Higher.</para></listitem>
-                    <listitem><para>32-bit and 64-bit Intel macs (choose at download time).</para></listitem>
+                    <listitem><para>macOS 10.6 (Snow Leopard) - 10.14 (Mojave).</para></listitem>
+                    <listitem><para>32-bit and 64-bit Intel macs.</para></listitem>
                 </itemizedlist>
 
-                Note that there is absolutely no support whatsoever for macOS versions earlier than 10.6, and PowerPC Macs.
+                Finally, if you need to run DDRescue-GUI on a PowerPC Mac, use the legacy PowerPC mac version:
+
+                <itemizedlist mark='bullet'>
+                    <listitem><para>macOS 10.5 (Leopard).</para></listitem>
+                    <listitem><para>PowerPC G4 or G5 CPU.</para></listitem>
+                </itemizedlist>
             </para>
 
             <para>
@@ -278,11 +283,11 @@ Free Documentation License".
 
                 <itemizedlist mark='bullet'>
                     <listitem><para>Windows 7 and Higher (64-bit).</para></listitem>
-                    <listitem><para>A 64-bit Intel CPU</para></listitem>
+                    <listitem><para>A 64-bit x86 CPU</para></listitem>
                     <listitem><para>500MB disk space</para></listitem>
                 </itemizedlist>
 
-                Note that only 64-bit CPUs are currently supported. I intend to fix this in the near future.
+                Support for 32-bit CPUs (and ARM versions of Windows via emulation) will come later.
             </para>
 
             <tip>
