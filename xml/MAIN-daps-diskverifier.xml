@@ -907,6 +907,24 @@ Free Documentation License".
                         <para>This is normal, and nothing to be concerned about.</para>
                     </answer>
                 </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Why not just zero-out the disk instead of using secure erase?</para>
+                    </question>
+                    <answer>
+                        <para>Using the secure erase command can also erase other parts of the disk not accessible to the operating system, for example spare areas of the disk used to fill in when disks start to develop bad sectors. Zeroing out a disk (also known as sanitizing) cannot access these parts of the disk, so they may still contain data.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
+                        <para>Can I use enhanced secure erase?</para>
+                    </question>
+                    <answer>
+                        <para>No, as enhanced secure erase may not leave the disk with just zeros to verify afterwards - this is manufacturer specific. As such, disks erased with enhanced secure erase are much harder to verify as having been erased correctly.
+                        </para>
+                    </answer>
+                </qandaentry>
             </qandaset>
         </section>
 
@@ -940,10 +958,19 @@ Free Documentation License".
                 </qandaentry>
                 <qandaentry>
                     <question>
+                        <para>How does Disk Verifier verify my disk has been erased correctly?</para>
+                    </question>
+                    <answer>
+                        <para>Disk Verifier reads over the whole surface of the disk to check that it contains only zeros. Note that the spare areas of the disk set aside for handling bad sectors cannot be verified in this way, so we just have to trust that any data stored there has been erased.
+                        </para>
+                    </answer>
+                </qandaentry>
+                <qandaentry>
+                    <question>
                         <para>How do I add a pre-erased disk on Parted Magic?</para>
                     </question>
                     <answer>
-                        <para>You can't - you need to buy the live disk to verify pre-erased disks.</para>
+                        <para>You can't - you need to buy the live disk to verify pre-erased disks, or you have to secure erase the disk again on Parted Magic.</para>
                     </answer>
                 </qandaentry>
             </qandaset>
